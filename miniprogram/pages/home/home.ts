@@ -1,4 +1,6 @@
 // // miniprogram/pages/home/home.js
+import {requestService} from "../../services/request-service";
+
 Page({
 
     /**
@@ -48,6 +50,8 @@ Page({
                 [option]:false
             });
         }
+        // 轮播图
+        this.getBarImg();
         console.log(that.data.option);
     },
 
@@ -100,6 +104,12 @@ Page({
 
     },
     // 轮播图
+    getBarImg(){
+        requestService.get('onlinePresentationsBanners/',{})
+            .then(res=>{
+                console.log(res);
+            })
+    },
     indexChange(event:any){
         let that = this as any;
         console.log(event);
