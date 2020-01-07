@@ -1,0 +1,124 @@
+/*!* miniprogram/pages/home/home.wxss *!*/
+/*!*顶部轮播*!*/
+.swiperTotal{
+    /*margin-top: 33rpx;*/
+    width: 100%;
+}
+.swiper-item{
+    padding-top: 42rpx;
+    /*使scale后依然图片能够保持圆角  */
+    /*属性值unset的值为：如果该样式是能被继承的，则其值为继承的值；如果该样式是不能被继承的，则其值为CSS规范（CSS specifications）指定的值*/
+    overflow:unset;
+}
+.swiper-img{
+    width: 89%;
+    margin: 0 auto;
+    display: block;
+    height: 223rpx;
+    box-shadow: 5px 0 10px grey;
+    border-radius: 8px;
+    z-index: 1;
+
+}
+.activeImg{
+    transform: scale(1.14);
+    transition:all .2s ease-in 0s;
+    z-index: 20;
+}
+/*主页内容部分*/
+.homeContent{
+
+}
+.topText{
+    display: flex;
+    height: 80rpx;
+    align-items: center;
+
+}
+.leftText{
+    flex-basis: 40%;
+    font-size: 17px;
+    letter-spacing: 2rpx;
+    text-align: center;
+    position: relative;
+
+}
+/*下划线*/
+.leftText:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -14rpx;
+    right: 0;
+    height: 2px;
+    width: 116px;
+    background-color: black;
+    margin: 0 auto;
+
+}
+.weui-cell_input image{
+    width: 48rpx;
+    height: 48rpx;
+    position: absolute;
+    left: 50rpx;
+}
+.weui-cell_input{
+    position: relative;
+    flex: 60%;
+
+}
+.localIco{
+    position: absolute;
+    left: 16rpx;
+    top: 16rpx;
+
+}
+.weui-input{
+    height: 69rpx;
+    background-color: #f6f6f6;
+    border-radius: 19px;
+    width: 77%;
+    font-size:13px;
+    padding-left: 64rpx;
+}
+.headBottom{
+    display: flex;
+    justify-content: space-around;
+    height: 80rpx;
+    align-items: center;
+
+}
+.pullMenu{
+    text-align: center;
+}
+.pullContent{
+    display: flex;
+    justify-content: space-between;
+}
+.pullBtn{
+    width: 27%;
+    min-height: 26px;
+    justify-content: center;
+    margin: 10rpx;
+
+}
+/*往届生可投*/
+.clickText{
+
+}
+/*我的收藏*/
+.myStore{
+
+}
+.labelBox{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f6f7f8;
+    padding: 10rpx;
+
+}
+.labelBox .showPullBtn{
+    margin: 0 10rpx;
+    padding: 8rpx 20rpx;
+
+}

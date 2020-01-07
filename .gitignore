@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+/miniprogram_npm
+
+**/miniprogram_npm
+**/node_modules
+# IDEs and editors
+/.idea
+.idea
+.project
+# compiled output
+/dist
+/tmp
+/out-tsc

@@ -1,0 +1,55 @@
+<!--&lt;!&ndash;miniprogram/pages/home/home.wxml&ndash;&gt;-->
+<view class="home-wrap">
+    <view class="swiper-wrap">
+        <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}"
+                interval="{{interval}}"
+                duration="{{duration}}"
+                indicator-color="grey"
+                indicator-active-color="white"
+                circular
+                previous-margin="60rpx"
+                next-margin="60rpx"
+                bindchange="indexChange"
+                class="swiperTotal"
+
+        >
+            <block wx:for="{{background}}" wx:key="*this">
+                <swiper-item class="swiper-item">
+                    <image src="{{item}}" alt="" class="swiper-img {{indexImg==index?'activeImg':''}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="homeContent">
+        <view class="contentHead" style="padding-bottom: 10rpx;">
+            <view class="headTop">
+                <view class="topText">
+                    <view class="leftText">线上宣讲查询</view>
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" bindinput="changeInput" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;"/>
+                        <van-icon name="search" class="localIco" size="19px"/>
+                    </view>
+                </view>
+            </view>
+            <view class="headBottom">
+                <view class="pullMenu">
+                    <van-dropdown-menu>
+                        <van-dropdown-item title="{{itemTitle}}" class="pullContent">
+                            <van-tag custom-class="pullBtn" wx:for="{{option}}" wx:key="index" size="medium" data-info="{{index}}" bindtap="clickLabel" color="{{item.isSelect?'#ce4920':'#f6f7f8'}}" text-color="{{item.isSelect?'white':'black'}}">{{item.name}}</van-tag>
+                        </van-dropdown-item>
+                    </van-dropdown-menu>
+                </view>
+                <view class="clickText">往届生可投</view>
+                <view class="myStore">我的收藏</view>
+            </view>
+        </view>
+        <view class="labelBox" wx:if="{{!labelBoxIsNull}}">
+            <van-tag round wx:for="{{optionShow}}" wx:key="index" color="white" text-color="black" size="medium" custom-class="showPullBtn" wx:if="{{item!=null}}">{{option[item].name}}</van-tag>
+        </view>
+        <!--<van-divider contentPosition="center" wx:if="{{labelBoxIsNull}}" fontSize="15">没有更多了</van-divider>-->
+        <view class="contentScroll">
+
+        </view>
+    </view>
+</view>
