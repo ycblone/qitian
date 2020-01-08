@@ -48,8 +48,65 @@
             <van-tag round wx:for="{{optionShow}}" wx:key="index" color="white" text-color="black" size="medium" custom-class="showPullBtn" wx:if="{{item!=null}}">{{option[item].name}}</van-tag>
         </view>
         <!--<van-divider contentPosition="center" wx:if="{{labelBoxIsNull}}" fontSize="15">没有更多了</van-divider>-->
-        <view class="contentScroll">
+        <view class="scrollView">
+            <scroll-view scroll-y="true" class="scrollContent">
+                <view class="scrollAddWrap">
+                    <view class="sessionBlock">
+                        <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                        <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                        <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                    </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view><view class="sessionBlock">
+                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
+                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
+                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
+                </view>
+                </view>
 
+            </scroll-view>
         </view>
     </view>
 </view>

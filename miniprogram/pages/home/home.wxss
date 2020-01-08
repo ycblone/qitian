@@ -88,7 +88,7 @@
     align-items: center;
 
 }
-.pullMenu{
+.pullMenu van-tag{
     text-align: center;
 }
 .pullContent{
@@ -120,5 +120,57 @@
 .labelBox .showPullBtn{
     margin: 0 10rpx;
     padding: 8rpx 20rpx;
+
+}
+/*滚动展示区域*/
+.scrollView{
+    width: 100%;
+
+}
+.scrollContent{
+    width: 100%;
+    height: 680rpx;
+}
+.scrollAddWrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0rpx 10rpx 60rpx 10rpx;
+
+
+}
+.sessionBlock{
+    width: 48%;
+    height: 248rpx;
+    letter-spacing: 2rpx;
+    margin-top: 16rpx;
+
+}
+.sessionBlock image{
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+.sessionBlock image text{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    padding-left: 10rpx;
+}
+.sessionTitle,.sessionPlayNum{
+    overflow: hidden;/*超出部分隐藏*/
+    text-overflow:ellipsis;/* 超出部分显示省略号 */
+    white-space: nowrap;/*规定段落中的文本不进行换行 */
+    width: 100%;/*需要配合宽度来使用*/
+}
+.sessionTitle{
+    font-size: 15px;
+    margin-top: -5rpx;
+}
+.sessionPlayNum{
+    font-size: 12px;
+    color: #B8B8B8;
+    margin-top: 2rpx;
 
 }
