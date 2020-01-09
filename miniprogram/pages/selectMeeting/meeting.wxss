@@ -1,6 +1,6 @@
 /* miniprogram/pages/selectMeeting/meeting.wxss */
 page{
-    background-color:#F0F0F0;
+    background-color:#ecf3fa;
     min-height:100vh;
     height:auto
 }
@@ -13,10 +13,62 @@ page{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    top: 0;
+    /*position: fixed;*/
+    /*top: 0;*/
     background-color: white;
 }
 .start{
     line-height: 100%;
+}
+.scrollView{
+    width: 100%;
+}
+.scrollContent{
+    /*height: 100%;*/
+
+}
+.companyBlock{
+    width: 90%;
+    height: 200rpx;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 20rpx;
+    box-shadow:0px 10px 20px #C0C0C0;
+    margin-top: 40rpx;
+}
+.imgLeft{
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto 0;
+
+}
+.imgLeft image{
+    width: 100%;
+    height: 100%;
+}
+.sessionRight{
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10rpx 0;
+}
+.rightTitle{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.rightText{
+    color: grey;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.rightBottom{
+    color: grey;
+    font-size: 13px;
 }

@@ -49,7 +49,7 @@
         </view>
         <!--<van-divider contentPosition="center" wx:if="{{labelBoxIsNull}}" fontSize="15">没有更多了</van-divider>-->
         <view class="scrollView">
-            <scroll-view scroll-y="true" class="scrollContent">
+            <scroll-view scroll-y="true" class="scrollContent" style="height:{{scrollHeight + 'px'}};">
                 <view class="scrollAddWrap">
                     <view class="sessionBlock">
                         <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
