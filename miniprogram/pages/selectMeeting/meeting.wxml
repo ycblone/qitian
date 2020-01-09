@@ -1,0 +1,22 @@
+<!--miniprogram/pages/selectMeeting/meeting.wxml-->
+<view class="selectMeetingWrap">
+    <view class="timeBox">
+        <view class="start">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                <view class="picker">
+                    开始时间
+                    <van-icon name="arrow-down" size="13px"/>
+                </view>
+            </picker>
+        </view>
+        <view class="end">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                <view class="picker">
+                    结束时间
+                    <van-icon name="arrow-down" />
+                </view>
+            </picker>
+        </view>
+
+    </view>
+</view>

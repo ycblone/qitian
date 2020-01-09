@@ -1,2 +1,4 @@
-<!--miniprogram/pages/selectMeeting/selectMeeting.wxml-->
-<text>miniprogram/pages/selectMeeting/selectMeeting.wxml</text>
+<view class="meetingWrap">
+    <view class="meeting" bindtap="toTitleMeeting">专题招聘会</view>
+    <view class="meeting" bindtap="toAreaMeeting">区域招聘会</view>
+</view>

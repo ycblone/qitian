@@ -1,0 +1,22 @@
+/* miniprogram/pages/selectMeeting/meeting.wxss */
+page{
+    background-color:#F0F0F0;
+    min-height:100vh;
+    height:auto
+}
+.selectMeetingWrap{
+
+}
+.timeBox{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+.start{
+    line-height: 100%;
+}

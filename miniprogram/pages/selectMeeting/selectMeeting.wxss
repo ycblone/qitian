@@ -1,1 +1,18 @@
-/* miniprogram/pages/selectMeeting/selectMeeting.wxss */
+.meetingWrap{
+    height: calc( 100vh - 50px );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.meeting{
+    width: 60%;
+    height: 242rpx;
+    background-color: rgba(206,73,32,0.9);
+    text-align: center;
+    line-height: 242rpx;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}

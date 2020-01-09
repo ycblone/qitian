@@ -3,17 +3,17 @@
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/selectMeeting",
     "pages/selectMeeting/selectMeeting",
     "pages/findJob/findJob",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/selectMeeting/meeting"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ce4920",
     "navigationBarTitleText": "加载中",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "grey"
+    "backgroundColor": "#F0F0F0"
   },
   "tabBar": {
     "custom": true,
@@ -52,7 +52,11 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-button": "@vant/weapp/button/index",
     "van-tag": "@vant/weapp/tag/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
