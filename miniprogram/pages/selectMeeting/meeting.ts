@@ -11,10 +11,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-      wx.setNavigationBarTitle({
-          title: '专题双选会'
-      });
+  onLoad: function (option:any) {
+      console.log('option',option.title);
+      if (option.title == '0') {
+          wx.setNavigationBarTitle({
+              title: '专题双选会'
+          });
+      }else {
+          wx.setNavigationBarTitle({
+              title: '区域招聘会'
+          });
+      }
+
 
   },
 
@@ -83,6 +91,5 @@ Page({
                 scrollHeight: scrollHeight
             })
         })
-        console.log(that.data.scrollHeight);
     }
 })

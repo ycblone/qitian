@@ -70,7 +70,12 @@ Page({
   },
     toTitleMeeting(){
         wx.navigateTo({
-            url:'meeting'
+            url:'meeting?title=0'
+        })
+    },
+    toAreaMeeting(){
+        wx.navigateTo({
+            url:'meeting?title=1'
         })
     }
 })
