@@ -1,0 +1,47 @@
+<!--miniprogram/pages/selectMeeting/meetingMore.wxml-->
+<view class="meetingMoreWrap">
+    <view class="moreTop">
+        <view class="imgLeft">
+            <image src="../../img/swiperA.jpg" alt=""/>
+        </view>
+        <view class="sessionRight">
+            <view class="rightTitle">招聘会名称：<text class="blackFont">冬季offer节-寒假实习专场</text></view>
+            <view class="rightText">
+                主办方：<text class="blackFont">齐天校招</text>
+            </view>
+            <view class="rightBottom">
+                <view>
+                    <view>报名企业</view>
+                    <view class="blackFont">174</view>
+                </view>
+                <view>
+                    <view>招聘职位</view>
+                    <view class="blackFont">174</view>
+                </view>
+                <view>
+                    <view>参与人数</view>
+                    <view class="blackFont">174</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="moreContent">
+        <view class="contentTitle">
+            <view class="borderLeft">*</view>
+            <view class="borderRight">时间</view>
+        </view>
+        <view class="time">2019-11-11 -- 2019-12-15</view>
+        <view class="contentTitle">
+            <view class="borderLeft">*</view>
+            <view class="borderRight">招聘会地址</view>
+        </view>
+        <view class="time">线上</view>
+        <view class="contentTitle">
+            <view class="borderLeft">*</view>
+            <view class="borderRight">招聘会简介</view>
+        </view>
+        <view class="time">2019年11月底，低年级寒假实习网申开始了，临近寒假，很多同行考试增多，压力增大。课业繁忙</view>
+    </view>
+    <view class="bottomButton" bindtap="comeIn">进入会场</view>
+</view>

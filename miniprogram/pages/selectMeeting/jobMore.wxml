@@ -1,0 +1,33 @@
+<view class="jobMore_1">
+    <view class="topCard">
+        <view class="cardTop">
+            <view class="cardTitle">
+                <text decode="{{true}}" class="titleTextL">金融机构部实习生</text>
+                <text decode="{{true}}" class="titleTextR">2020-02-15</text>
+            </view>
+            <view class="topContent">
+                <text decode="{{true}}" class="contentTop">本科以上 实习</text>
+                <text decode="{{true}}" class="contentBottom">面议</text>
+            </view>
+        </view>
+        <view class="cardBottom">
+            <view class="bottomTop">
+                <image bindtap="bottomImg_15_click" src="http://wx.ymznkf.com/project/8791/测试/miniprogram/jobMore/images/jobMore_bottomImg_15.jpg" style=" width:110rpx;height:107rpx;"  mode="scaleToFill" border="0"    class="bottomImg"></image>
+                <text decode="{{true}}" class="bottomTopTitle">天虹基金</text>
+                <text decode="{{true}}" class="bottomTopContent">其他 规模：10-500人</text>
+                <button bindtap="bottomBtn_19_click" decode="{{true}}" class="bottomBtn">查看</button>
+            </view>
+            <view class="cardLocation">
+                <image bindtap="locationImg_20_click" src="http://wx.ymznkf.com/project/8791/测试/miniprogram/jobMore/images/jobMore_locationImg_20.jpg" style=" width:15rpx;height:24rpx;"  mode="scaleToFill" border="0"    class="locationImg"></image>
+                <text decode="{{true}}" class="locationContent">北京市城区乐坛北街2号乐坛大厦A21</text>
+            </view>
+        </view>
+    </view>
+    <view class="contentWrap">
+        <view class="contentTitle">
+            <view class="borderLeft">
+            </view>
+            <text decode="{{true}}" class="borderRight">岗位描述</text>
+        </view>
+    </view>
+</view>

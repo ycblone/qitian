@@ -5,19 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-      scrollHeight:''
+      scrollHeight:'',
+      isArea:false,
+      region: ['广东省', '广州市', '海珠区'],
+      customItem: '全部'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option:any) {
-      console.log('option',option.title);
+      const that = this as any;
       if (option.title == '0') {
+          that.setData({
+              isArea:false
+          });
           wx.setNavigationBarTitle({
               title: '专题双选会'
           });
       }else {
+          that.setData({
+              isArea:true
+          });
           wx.setNavigationBarTitle({
               title: '区域招聘会'
           });
@@ -75,6 +84,7 @@ Page({
   onShareAppMessage: function ():any {
 
   },
+    // 获取剩余高度
     computeScrollViewHeight() {
         const that = this as any;
         // 返回一个 SelectorQuery 对象实例
@@ -91,5 +101,15 @@ Page({
                 scrollHeight: scrollHeight
             })
         })
+    },
+    // 地区选择器
+    bindRegionChange(event:any){
+        console.log('event',event);
+    },
+    // 进入招聘会
+    toMore(){
+      wx.navigateTo({
+          url:'meetingMore'
+      })
     }
 })

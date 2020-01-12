@@ -1,0 +1,51 @@
+page{
+    background-color:#ecf3fa;
+    min-height:100vh;
+    height:auto
+}
+.backgroundBlock{
+    width: 100%;
+    height: 201rpx;
+    background-color: #ce4920;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.companyWrap{width:750rpx;padding:0rpx;clear:both;float:left;text-align:left; border-radius:0rpx;font-size:16rpx;}
+.companyWrap .companyBlock{
+    width:705rpx;position: relative;padding:0rpx;margin-top:0rpx;margin-left:22rpx;float:left;text-align:left; border-radius:0rpx;font-size:16rpx;background-color: white;height: 300rpx;border-radius: 10rpx;box-shadow: 0px 5px 10px #dbdbdf;z-index: 100;
+}
+.companyWrap .companyBlock .pic{width:127rpx;height:100rpx;padding:0rpx;margin-top:62rpx;margin-left:30rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:left; border-radius:0rpx;font-size:97rpx; line-height:100rpx;}
+.companyWrap .companyBlock .bottom{width:622rpx;height:36rpx;padding:0rpx;margin-top:230rpx;margin-left:33rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:left; border-radius:0rpx;font-size:33rpx; line-height:36rpx;}
+.companyWrap .companyBlock .bottom .icon{width:30rpx;height:36rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:33rpx; line-height:36rpx;}
+.companyWrap .companyBlock .bottom .iconText{width:585rpx;height:36rpx;padding:0rpx;margin-top:0rpx;margin-left:6rpx;float:left;text-align:left; border-radius:0rpx; color:#b9bdb9;font-size:22rpx; line-height:36rpx;}
+.companyWrap .companyBlock .border{width:618rpx;height:19rpx;padding:0rpx;margin-top:187rpx;margin-left:37rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:left; border-bottom-color:#f7f7f7; border-bottom-width:1rpx; border-bottom-style:solid; border-radius:0rpx;font-size:16rpx; line-height:19rpx;}
+.companyWrap .companyBlock .imgRight{width:515rpx;padding:0rpx;margin-top:62rpx;margin-left:157rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:left; border-radius:0rpx;font-size:97rpx; line-height:100rpx;}
+.companyWrap .companyBlock .imgRight .title{width:515rpx;min-height:39rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:center; border-radius:0rpx; font-weight:bold; color:#212521;font-size:30rpx; line-height:39rpx;}
+.companyWrap .companyBlock .imgRight .miaoshu{width:515rpx;padding:0rpx;clear:both;margin-top:22rpx;margin-left: 30rpx;float:left;text-align:left; border-radius:0rpx; color:#8d8d8d;font-size:36rpx; line-height:39rpx;}
+.companyWrap .companyBlock .imgRight .miaoshu .hangye{width:auto;min-height:39rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:center; border-radius:0rpx; color:#8d8d8d;font-size:22rpx; line-height:39rpx;}
+.companyWrap .companyBlock .imgRight .miaoshu .guimo{width:auto;min-height:39rpx;padding:0rpx;margin-top:0rpx;margin-left:82rpx;float:left;text-align:center; border-radius:0rpx;font-size:22rpx; line-height:39rpx;}
+/*招聘岗位content*/
+.companyWrap .contentBar{width:750rpx;height:55rpx;padding:0rpx;clear:both;margin-top:50rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:53rpx; line-height:55rpx;}
+.companyWrap .contentBar .barLeft{width:248rpx;height:55rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:53rpx; line-height:55rpx;}
+.companyWrap .contentBar .barLeft .barTextLeft{width:189rpx;height:53rpx;padding:0rpx;margin-top:2rpx;margin-left:0rpx;float:left;text-align:center; border-radius:0rpx; color:#333637;font-size:33rpx; line-height:53rpx;}
+.companyWrap .contentBar .barRight{width:201rpx;height:55rpx;padding:0rpx;margin-top:0rpx;margin-left:33rpx;float:left;text-align:center; border-radius:0rpx; color:#9c9ea0;font-size:33rpx; line-height:55rpx;}
+.companyWrap .listBlock{
+    width: 86%;
+    min-height: 77px;
+    padding: 15rpx 30rpx;
+    clear: both;
+    margin-top: 11rpx;
+    margin-left: 22rpx;
+    float: left;
+    text-align: left;
+    border-radius: 10rpx;
+    font-size: 16rpx;
+    box-shadow: 0px 5px 10px #dbdbdf;
+    background-color: white;
+}
+.companyWrap .listBlock .listTitle{width:705rpx;height:40rpx;padding:0rpx;clear:both;margin-top:22rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx; color:#050b07;font-size:33rpx; line-height:40rpx;}
+.companyWrap .listBlock .listBottom{width:705rpx;height:36rpx;padding:0rpx;clear:both;margin-top:33rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:12px; line-height:36rpx;}
+.companyWrap .listBlock .listBottom .bottomLeft{
+    width:293rpx;height:36rpx;margin-left:0rpx;float:left;border-radius:0rpx; color:#c3c7c3;line-height:36rpx;
+}
+.companyWrap .listBlock .listBottom .bottomRight{width:353rpx;height:36rpx;padding:0rpx;margin-top:0rpx;margin-left:58rpx;float:left;text-align:center; border-radius:0rpx; color:#cfd3cf;line-height:36rpx;}

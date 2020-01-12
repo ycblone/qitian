@@ -1,0 +1,30 @@
+page{
+    background-color:#fcfbfa;
+    min-height:100vh;
+    height:auto
+}
+.jobMore_1{width:748rpx;padding:0rpx;clear:both;float:left;background-color:#fcfbfa;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .topCard{width:700rpx;padding:0rpx;clear:both;margin-top:19rpx;margin-left:25rpx;float:left;background-color:#fbfffb;text-align:left; border-radius:0rpx;font-size:17rpx;box-shadow: 0px 5px 10px grey;
+    border-radius: 10rpx;
+}
+.jobMore_1 .topCard .cardTop{width:700rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .topCard .cardTop .cardTitle{width:700rpx;padding:0rpx;clear:both;margin-top:38rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:63rpx; line-height:66rpx;}
+.jobMore_1 .topCard .cardTop .cardTitle .titleTextL{width:355rpx;min-height:66rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:center; border-radius:0rpx; color:#000500;font-size:34rpx; line-height:66rpx;font-weight: bold}
+.jobMore_1 .topCard .cardTop .cardTitle .titleTextR{width:222rpx;height:66rpx;padding:0rpx;margin-top:0rpx;margin-left:121rpx;float:left;text-align:center; border-radius:0rpx; color:#c3c3c3;font-size:13px; line-height:66rpx;}
+.jobMore_1 .topCard .cardTop .topContent{width:700rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .topCard .cardTop .topContent .contentTop{width:700rpx;min-height:51rpx;padding:0rpx;clear:both;margin-top:14rpx;margin-left:40rpx;float:left;text-align:left; border-radius:0rpx; color:#a5a5a5;font-size:25rpx; font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu,宋体,Arial, Helvetica; line-height:51rpx;}
+.jobMore_1 .topCard .cardTop .topContent .contentBottom{width:700rpx;height:58rpx;padding:0rpx;clear:both;margin-top:11rpx;margin-left:40rpx;float:left;text-align:left; border-radius:0rpx; color:#e6413c;font-size:25rpx; line-height:58rpx;}
+.jobMore_1 .topCard .cardBottom{width:700rpx;height:222rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .topCard .cardBottom .bottomTop{width:700rpx;position: relative;height:144rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .topCard .cardBottom .bottomTop .bottomImg{width:110rpx;height:107rpx;padding:0rpx;margin-top:29rpx;margin-left:35rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:left; border-radius:40rpx;font-size:123rpx; line-height:107rpx;}
+.jobMore_1 .topCard .cardBottom .bottomTop .bottomTopTitle{width:157rpx;height:48rpx;padding:0rpx;margin-top:29rpx;margin-left:180rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:center; border-radius:0rpx; color:#535353;font-size:34rpx; line-height:48rpx;}
+.jobMore_1 .topCard .cardBottom .bottomTop .bottomTopContent{width:314rpx;height:41rpx;padding:0rpx;margin-top:96rpx;margin-left:146rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:center; border-radius:0rpx; color:#a3a3a3;font-size:25rpx; line-height:41rpx;}
+.jobMore_1 .topCard .cardBottom .bottomTop .bottomBtn{width:80rpx;height:51rpx;padding:0rpx;margin-top:58rpx;margin-left:594rpx;float:left;position: absolute;top: 0rpx;left: 0rpx;text-align:center; border-radius:0rpx; color:#f8fcff;font-size:25rpx; line-height:51rpx;}
+.jobMore_1 .topCard .cardBottom .cardLocation{width:700rpx;height:77rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:75rpx; line-height:77rpx;}
+.jobMore_1 .topCard .cardBottom .cardLocation .locationImg{width:15rpx;height:24rpx;padding:0rpx;margin-top:25rpx;margin-left:38rpx;float:left;text-align:left; border-radius:0rpx;font-size:21rpx; line-height:24rpx;}
+.jobMore_1 .topCard .cardBottom .cardLocation .locationContent{width:632rpx;height:24rpx;padding:0rpx;margin-top:25rpx;margin-left:14rpx;float:left;text-align:left; border-radius:0rpx; color:#9ea39e;font-size:22rpx; line-height:24rpx;}
+.jobMore_1 .contentWrap{width:748rpx;height:561rpx;padding:0rpx;clear:both;margin-top:42rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
+.jobMore_1 .contentWrap .contentTitle{width:748rpx;height:70rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:68rpx; line-height:70rpx;}
+.jobMore_1 .contentWrap .contentTitle .borderLeft{width:7rpx;height:32rpx;padding:0rpx;margin-top:19rpx;margin-left:32rpx;float:left;background-color:#0092fb;background-image: url(http://wx.ymznkf.com/project/8791/测试//miniprogram/jobMore/images/jobMore_borderLeft_24.jpg);background-size:cover;text-align:left; border-radius:0rpx;font-size:29rpx; line-height:32rpx;}
+.jobMore_1 .contentWrap .contentTitle .borderRight{width:134rpx;height:32rpx;padding:0rpx;margin-top:19rpx;margin-left:14rpx;float:left;text-align:center; border-radius:0rpx; color:#000400;font-size:15px; line-height:32rpx;
+    font-weight: bold;}

@@ -1,12 +1,16 @@
 {
   "pages": [
+    "pages/selectMeeting/jobMore",
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
     "pages/selectMeeting/selectMeeting",
     "pages/findJob/findJob",
     "pages/my/my",
-    "pages/selectMeeting/meeting"
+    "pages/selectMeeting/meeting",
+    "pages/selectMeeting/meetingMore",
+    "pages/selectMeeting/meetingPlace",
+    "pages/selectMeeting/companyMore"
   ],
   "window": {
     "backgroundTextStyle": "light",

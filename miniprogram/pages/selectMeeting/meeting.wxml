@@ -1,6 +1,6 @@
 <!--miniprogram/pages/selectMeeting/meeting.wxml-->
 <view class="selectMeetingWrap">
-    <view class="timeBox">
+    <view class="timeBox isTime" wx:if="{{!isArea}}">
         <view class="start">
             <picker mode="date" value="{{date}}" bindchange="bindDateChange">
                 <view class="picker">
@@ -18,10 +18,21 @@
             </picker>
         </view>
     </view>
+    <view class="timeBox" wx:if="{{isArea}}">
+        <view class="areaSelect">
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker">
+                    区域
+                    <van-icon name="arrow-down" size="13px"/>
+                </view>
+            </picker>
+        </view>
+        <view class="areaText">北京</view>
+    </view>
     <view class="scrollView">
         <scroll-view class="scrollContent" scroll-y="true" style="height:{{scrollHeight + 'px'}};">
             <view style="padding-bottom: 50rpx">
-                <view class="companyBlock">
+                <view class="companyBlock" bindtap="toMore">
                     <view class="imgLeft">
                         <image src="../../img/swiperA.jpg" alt=""/>
                     </view>

@@ -1,0 +1,10 @@
+<!--miniprogram/pages/selectMeeting/meetingPlace.wxml-->
+<view class="placeWrap">
+    <view class="company" bindtap="toCompany">
+        <view class="leftImg">
+            <image src="../../img/swiperA.jpg" alt=""/>
+        </view>
+        <text decode="{{true}}" class="companySession">士大夫是都发吉萨大了爱上了就；拉圣诞节分厘卡撒酒疯了 索拉卡地方就啊是否冷；啦四道口附近；阿里山扩大飞机啊苏联的飞机萨克利夫案例索拉卡地方就；爱上了拉萨看得见发了；拉山口</text>
+        <text decode="{{true}}" class="compangName">CTVE视源股份</text>
+    </view>
+</view>

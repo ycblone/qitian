@@ -11,14 +11,37 @@ page{
     width: 100%;
     height: 100rpx;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     /*position: fixed;*/
     /*top: 0;*/
     background-color: white;
 }
+.isTime{
+    justify-content: space-around;
+}
+
+.areaBox{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
 .start{
     line-height: 100%;
+}
+.areaSelect{
+    padding-left: 80rpx;
+}
+.areaText{
+    height: 30rpx;
+    line-height: 30rpx;
+    background-color: darkgrey;
+    color: white;
+    text-align: center;
+    padding: 10rpx 40rpx;
+    margin-left: 10rpx;
+    border-radius: 10rpx;
 }
 .scrollView{
     width: 100%;
