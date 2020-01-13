@@ -4,13 +4,15 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/selectMeeting/selectMeeting",
-    "pages/findJob/findJob",
     "pages/my/my",
     "pages/selectMeeting/meeting",
     "pages/selectMeeting/meetingMore",
     "pages/selectMeeting/meetingPlace",
     "pages/selectMeeting/jobMore",
-    "pages/selectMeeting/companyMore"
+    "pages/findJob/practiceMore",
+    "pages/findJob/findJob",
+    "pages/selectMeeting/companyMore",
+    "pages/cloud/cloud"
   ],
   "window": {
     "backgroundTextStyle": "light",

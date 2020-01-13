@@ -39,7 +39,7 @@ page{
     color: #f8fcff;
     font-size: 25rpx;
     line-height: 80rpx;
-    background-color: #ce4920borderLeft ;
+    background-color: #ce4920;
 }
 .jobMore_1 .topCard .cardBottom .cardLocation{width:700rpx;height:77rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:75rpx; line-height:77rpx;}
 .jobMore_1 .topCard .cardBottom .cardLocation .locationImg{width:15rpx;height:24rpx;padding:0rpx;margin-top:25rpx;margin-left:38rpx;float:left;text-align:left; border-radius:0rpx;font-size:21rpx; line-height:24rpx;}

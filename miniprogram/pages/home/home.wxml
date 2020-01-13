@@ -15,7 +15,7 @@
 
         >
             <block wx:for="{{background}}" wx:key="*this">
-                <swiper-item class="swiper-item">
+                <swiper-item class="swiper-item" bindtap="toCloud">
                     <image src="{{item}}" alt="" class="swiper-img {{indexImg==index?'activeImg':''}}"/>
                 </swiper-item>
             </block>

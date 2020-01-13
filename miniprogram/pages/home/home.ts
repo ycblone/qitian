@@ -182,5 +182,10 @@ Page({
                 scrollHeight: scrollHeight
             })
         })
+    },
+    toCloud(){
+        wx.navigateTo({
+            url:'../cloud/cloud'
+        })
     }
 })

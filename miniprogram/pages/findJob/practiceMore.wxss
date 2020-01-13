@@ -1,0 +1,48 @@
+/* miniprogram/pages/findJob/practiceMore.wxss */
+.card{
+    width: 100%;
+    height: 170rpx;
+    background-color: #ce4920;
+    display: flex;
+    color: white;
+    font-size: 12px;
+    padding: 15rpx 20rpx;
+    align-items: center;
+
+}
+.imgWrap{
+    width: 100rpx;
+    height: 100rpx;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.imgWrap image{
+    width: 100%;
+    height: 100%;
+
+}
+.cardRight{
+    width: 77%;
+    height: 64%;
+    padding-left: 32rpx;
+    line-height: 55rpx;
+
+
+}
+.cardTitle{
+    font-size: 13px;
+    font-weight: bold;
+}
+.demandLeft,.demandRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.demandRight{
+    margin-left: 100px;
+
+}
+van-icon{
+    color: #ce4920;
+}

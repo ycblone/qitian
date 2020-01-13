@@ -11,8 +11,40 @@
             </view>
         </view>
         <view class="headBottom">
-            <view class="industry">行业分类</view>
-            <view class="city">城市分类</view>
+            <view class="industry">行业分类
+                <van-icon name="arrow-down" />
+            </view>
+            <view class="city">城市分类
+                <van-icon name="arrow-down" />
+            </view>
         </view>
+    </view>
+    <view class="scrollView">
+        <scroll-view scroll-y="true" class="scrollContent" style="height:{{scrollHeight + 'px'}};">
+            <view class="scrollAddWrap">
+                <view class="card" bindtap="toPractice">
+                    <view class="imgWrap">
+                        <image src="../../img/swiperA.jpg" alt=""/>
+                    </view>
+                    <view class="cardRight">
+                        <view class="cardTitle">企业银行部实习生</view>
+                        <text class="overOmit">浦发银行硅谷创业街</text>
+                        <text>截止日期：2019-10-06</text>
+                        <view class="cardBottom">
+                            <view>
+                                <van-icon name="location-o" />北京
+                            </view>
+                            <view>
+                                <van-icon name="clock-o" />3天/周
+                            </view>
+                            <view>
+                                <van-icon name="balance-o" />面议
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </scroll-view>
     </view>
 </view>
