@@ -10,6 +10,7 @@
                 <text decode="{{true}}" class="contentBottom">面议</text>
             </view>
         </view>
+        <!--<view class="greyLine"></view>-->
         <view class="cardBottom">
             <view class="bottomTop">
                 <image bindtap="bottomImg_15_click" src="http://wx.ymznkf.com/project/8791/测试/miniprogram/jobMore/images/jobMore_bottomImg_15.jpg" style=" width:110rpx;height:107rpx;"  mode="scaleToFill" border="0"    class="bottomImg"></image>
@@ -28,6 +29,24 @@
             <view class="borderLeft">
             </view>
             <text decode="{{true}}" class="borderRight">岗位描述</text>
+        </view>
+        <view class="jobTask">岗位职责</view>
+        <view class="jobTaskContent">上的飞机数控开料机顺利打开考虑老师的卡顺利打开艾萨拉扣艾萨拉扣斯利康来上课流口水斯利康来上课斯利康啊顺利打开啊顺利打开来上课了收到了</view>
+        <view class="jobTask">岗位要求</view>
+        <view class="jobTaskContent">上的飞机数控开料机顺利打开考虑老师的卡顺利打开艾萨拉扣艾萨拉扣斯利康来上课流口水斯利康来上课斯利康啊顺利打开啊顺利打开来上课了收到了</view>
+
+    </view>
+    <view class="bottomButton">
+        <view class="share">
+            <image src="../../img/share.png" alt=""/>
+            <view class="shareText">分享</view>
+        </view>
+        <view class="share">
+            <image src="../../img/collectd.png" alt=""/>
+            <view class="shareText">收藏</view>
+        </view>
+        <view class="deliver">
+            投递简历
         </view>
     </view>
 </view>

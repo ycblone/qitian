@@ -1,1 +1,63 @@
 /* miniprogram/pages/findJob/findJob.wxss */
+.findJobWrap{
+
+}
+.topText{
+    display: flex;
+    height: 80rpx;
+    align-items: center;
+
+}
+.leftText{
+    flex-basis: 40%;
+    font-size: 17px;
+    letter-spacing: 2rpx;
+    text-align: center;
+    position: relative;
+
+}
+/*下划线*/
+.leftText:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -14rpx;
+    right: 0;
+    height: 2px;
+    width: 116px;
+    background-color: black;
+    margin: 0 auto;
+
+}
+.weui-cell_input image{
+    width: 48rpx;
+    height: 48rpx;
+    position: absolute;
+    left: 50rpx;
+}
+.weui-cell_input{
+    position: relative;
+    flex: 60%;
+
+}
+.localIco{
+    position: absolute;
+    left: 16rpx;
+    top: 16rpx;
+
+}
+.weui-input{
+    height: 69rpx;
+    background-color: #f6f6f6;
+    border-radius: 19px;
+    width: 77%;
+    font-size:13px;
+    padding-left: 64rpx;
+}
+.headBottom{
+    display: flex;
+    justify-content: space-around;
+    height: 80rpx;
+    align-items: center;
+
+}
