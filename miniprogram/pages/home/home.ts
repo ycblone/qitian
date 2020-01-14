@@ -53,7 +53,8 @@ Page({
         }
         // 轮播图
         this.getBarImg();
-        console.log(that.data.option);
+        this.getOnlineSession();
+
     },
 
     /**
@@ -114,8 +115,14 @@ Page({
     getBarImg(){
         requestService.get('onlinePresentationsBanners/',{})
             .then(res=>{
-                console.log(res);
+                console.log('轮播',res);
             })
+    },
+    // 线上宣讲详情
+    getOnlineSession(){
+        requestService.get('onlinePresentations/',{}).then(res=>{
+            console.log('宣讲会',res);
+        })
     },
     indexChange(event:any){
         let that = this as any;

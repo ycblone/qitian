@@ -46,15 +46,15 @@ export const requestService = {
             }
           }
           syncNum--;
-          if (res.statusCode == 401) {
+          if (res.data.code == 401) {
             wx.clearStorageSync();
             wx.redirectTo({
               url: '/pages/login/login',
             });
             return;
           }
-          if (res.data.msgCode !== '0') {
-            reject(new Error(res.msg));
+          if (res.data.code !== 200) {
+              reject(new Error(res.msg));
           } else {
             resolve(res);
           }
@@ -111,7 +111,7 @@ export const requestService = {
             }
           }
           syncNum--;
-          if (res.data.msgCode == 401) {
+          if (res.data.code == 401) {
               wx.clearStorageSync();
               // 是否是登录界面发起的鉴权操作
               if (!isLogin) {
@@ -121,7 +121,7 @@ export const requestService = {
                 return;
             }
           };
-          if (res.data.msgCode !== '0') {
+          if (res.data.code !== 200) {
             // 如果是login鉴权的话不要显示“没有登录”的字样
             if (!isLogin) {
                 wx.showToast({
@@ -177,7 +177,7 @@ export const requestService = {
             }
           }
           syncNum--;
-          if (res.statusCode == 401) {
+          if (res.data.code == 401) {
             wx.clearStorageSync();
             wx.redirectTo({
               url: '/pages/login/login',
