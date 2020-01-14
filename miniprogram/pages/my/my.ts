@@ -1,12 +1,11 @@
-// miniprogram/pages/cloud/cloud.js
+// miniprogram/pages/my/my.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      videoUrl: '',
-      hasVideo: false
+
   },
 
   /**
@@ -27,7 +26,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      if (typeof this.getTabBar === 'function' &&
+          this.getTabBar()) {
+          this.getTabBar().setData({
+              selected: 3
+          })
+      }
   },
 
   /**

@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "云宣讲详情",
-  "usingComponents": {}
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
 }

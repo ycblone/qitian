@@ -1,18 +1,18 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/my/my",
     "pages/index/index",
     "pages/logs/logs",
     "pages/selectMeeting/selectMeeting",
-    "pages/my/my",
     "pages/selectMeeting/meeting",
     "pages/selectMeeting/meetingMore",
     "pages/selectMeeting/meetingPlace",
     "pages/selectMeeting/jobMore",
     "pages/findJob/practiceMore",
     "pages/findJob/findJob",
-    "pages/selectMeeting/companyMore",
-    "pages/cloud/cloud"
+    "pages/cloud/cloud",
+    "pages/selectMeeting/companyMore"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,7 +24,7 @@
   "tabBar": {
     "custom": true,
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#ce4920",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -62,7 +62,9 @@
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-row": "@vant/weapp/row/index",
-    "van-col": "@vant/weapp/col/index"
+    "van-col": "@vant/weapp/col/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

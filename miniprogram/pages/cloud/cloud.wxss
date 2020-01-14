@@ -1,1 +1,55 @@
 /* miniprogram/pages/cloud/cloud.wxss */
+.banner{
+    width: 100%;
+    height: 455rpx;
+    /*图片垂直居中要设置行高*/
+    line-height: 240rpx;
+    border-color: #D6D7E6;
+}
+.banner image,video{
+    /*width: 750rpx;*/
+    /*height: 376rpx;*/
+    width: 100%;
+    height: 100%;
+}
+.description{
+    width: 100%;
+    padding: 20rpx 0;
+
+
+}
+.desTitle{
+    width: 89%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.desBottom{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20rpx;
+
+}
+.playNum{
+    border: 1px solid #E0E0E0;
+    display: flex;
+    color: #A0A0A0;
+    font-size: 13px;
+}
+.desBottom image{
+    width: 20px;
+    height: 20px;
+    margin-left: 10rpx;
+}
+.line{
+    width: 100%;
+    height: 20rpx;
+    background-color: #ecf3fa;
+}
+.ppt{
+
+}

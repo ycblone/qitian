@@ -1,1 +1,51 @@
 /* miniprogram/pages/my/my.wxss */
+page{
+    height: 100vh;
+    background-color: #E8E8E8;
+}
+.myHead{
+    height: 300rpx;
+    background-color: #ce4920;
+}
+.imgAdd{
+    height: 70%;
+    margin: auto 0;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.imgAdd image{
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+.login{
+    padding-bottom: 5rpx;
+    border-bottom: 1px solid white;
+
+}
+.resume{
+    height: 280rpx;
+    display: flex;
+    background-color: white;
+}
+.imgBlock{
+    color: #686868;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+
+}
+.resume image{
+    width: 110rpx;
+    height: 110rpx;
+    margin-bottom: 10rpx;
+
+}
+.myBottom{
+    width: 90%;
+    background-color: white;
+    margin: 30rpx auto;
+}
