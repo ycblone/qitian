@@ -155,9 +155,23 @@ Page({
         })
     },
     // 搜索框
+    // 点击完成
     searchInput(e:any){
         const that = this as any;
         that.getAllBusiness(e.detail.value);
+        const value = e.detail.value
+        requestService.get('onlinePresentations/keyword/',{value},{},true,true)
+            .then(res=>{
+
+            })
+    },
+    // 失焦时
+    searchIsNull(e:any){
+        const that = this as any;
+        // 若输入框为空，则查询所有
+        if (!e.detail.value) {
+            that.getOnlineSession();
+        }
     },
     // 点击标签触发（单选）
     clickLabel(event:any){
@@ -195,25 +209,15 @@ Page({
         let isNull = true;
         if (that.data.optionShow === '') {
             isNull = true;
-            that.getAllBusiness();
+            // 标签被取消则查询显示所有的宣讲会
+            that.getOnlineSession();
         }else {
             isNull = false;
-            console.log('name',that.data.option[that.data.optionShow].name);
             that.getAllBusiness(that.data.option[that.data.optionShow].name);
         }
         that.setData({
             labelBoxIsNull:isNull
         });
-        // 遍历option，如果标签都未被选中，则labelBox为空，赋给labelBoxIsNull ：true 在wxml上不予显示
-        // let isNull = true;
-        // that.data.option.forEach((item:any)=>{
-        //     if (item.isSelect) {
-        //         isNull = false;
-        //     }
-        // });
-        // that.setData({
-        //     labelBoxIsNull:isNull
-        // });
     },
     // 点击标签触发（可多选）
     // clickLabel(event:any){
@@ -264,6 +268,7 @@ Page({
                     });
                 })
         }else {
+            // 所有
             requestService.get('onlinePresentations/business/',{})
                 .then(res=>{
                     that.setData({

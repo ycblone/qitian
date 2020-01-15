@@ -27,7 +27,7 @@
                 <view class="topText">
                     <view class="leftText">线上宣讲查询</view>
                     <view class="weui-cell weui-cell_input">
-                        <input class="weui-input" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;" bindconfirm="searchInput"/>
+                        <input class="weui-input" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;" bindconfirm="searchInput" bindblur="searchIsNull"/>
                         <van-icon name="search" class="localIco" size="19px"/>
                     </view>
                 </view>
