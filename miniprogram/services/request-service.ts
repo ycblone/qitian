@@ -17,7 +17,7 @@ export const requestService = {
     host = _h;
   },
 
-  async get(url: string, data: object, header = {}, showLoading = true) {
+  async get(url: string, data: object, header = {}, showLoading = true,isUrl = false) {
     if (showLoading) {
       if (syncShowLoadingNum === 0) {
         wx.showLoading({
@@ -33,43 +33,88 @@ export const requestService = {
       await sleep();
     }
     return new Promise<any>((resolve, reject) => {
-      wx.request({
-        url: `${host}/${url}`,
-        method: 'GET',
-        header: { ...header, ...{ token: authenService.getToken() } },
-        data,
-        success(res: any) {
-          if (showLoading) {
-            syncShowLoadingNum--;
-            if (syncShowLoadingNum === 0) {
-              wx.hideLoading({});
-            }
-          }
-          syncNum--;
-          if (res.data.code == 401) {
-            wx.clearStorageSync();
-            wx.redirectTo({
-              url: '/pages/login/login',
-            });
-            return;
-          }
-          if (res.data.code !== 200) {
-              reject(new Error(res.msg));
-          } else {
-            resolve(res);
-          }
-        },
-        fail(err) {
-          if (showLoading) {
-            syncShowLoadingNum--;
-            if (syncShowLoadingNum === 0) {
-              wx.hideLoading({});
-            }
-          }
-          syncNum--;
-          reject(new Error(err.errMsg));
-        }
-      })
+      // 按行业查询接口是把参数拼在url后面的，所以这里判断一下
+      if (isUrl) {
+        // 对象字符串转换
+        //   let sendData = JSON.stringify(data.business.replace("\"",""));
+        //   console.log('sendData',sendData);
+        //   console.log('data',data);
+          wx.request({
+              url: `${host}/${url}/${data.business.replace("\"","")}`,/*去引号*/
+              method: 'GET',
+              header: { ...header, ...{ token: authenService.getToken() } },
+              success(res: any) {
+                  if (showLoading) {
+                      syncShowLoadingNum--;
+                      if (syncShowLoadingNum === 0) {
+                          wx.hideLoading({});
+                      }
+                  }
+                  syncNum--;
+                  if (res.data.code == 401) {
+                      wx.clearStorageSync();
+                      wx.redirectTo({
+                          url: '/pages/login/login',
+                      });
+                      return;
+                  }
+                  if (res.data.code !== 200) {
+                      reject(new Error(res.msg));
+                  } else {
+                      resolve(res);
+                  }
+              },
+              fail(err) {
+                  if (showLoading) {
+                      syncShowLoadingNum--;
+                      if (syncShowLoadingNum === 0) {
+                          wx.hideLoading({});
+                      }
+                  }
+                  syncNum--;
+                  reject(new Error(err.errMsg));
+              }
+          })
+      }else {
+          wx.request({
+              url: `${host}/${url}`,
+              method: 'GET',
+              header: { ...header, ...{ token: authenService.getToken() } },
+              data,
+              success(res: any) {
+                  if (showLoading) {
+                      syncShowLoadingNum--;
+                      if (syncShowLoadingNum === 0) {
+                          wx.hideLoading({});
+                      }
+                  }
+                  syncNum--;
+                  if (res.data.code == 401) {
+                      wx.clearStorageSync();
+                      wx.redirectTo({
+                          url: '/pages/login/login',
+                      });
+                      return;
+                  }
+                  if (res.data.code !== 200) {
+                      reject(new Error(res.msg));
+                  } else {
+                      resolve(res);
+                  }
+              },
+              fail(err) {
+                  if (showLoading) {
+                      syncShowLoadingNum--;
+                      if (syncShowLoadingNum === 0) {
+                          wx.hideLoading({});
+                      }
+                  }
+                  syncNum--;
+                  reject(new Error(err.errMsg));
+              }
+          })
+
+      }
     });
   },
   // 拼接图片路径字符串专用函数

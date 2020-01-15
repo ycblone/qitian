@@ -21,22 +21,28 @@ Page({
         indexImg: 0,
         // 下拉菜单
         option:[
-            {name:'互联网'},
-            {name:'金融'},
-            {name:'土木工程'},
-            {name:'化学与环境测试'},
-            {name:'生物结构与社会人文'},
-            {name:'天地人和草木共生万物和谐'},
-            {name:'互联网'},
-            {name:'互联网'},
-            {name:'互联网'},
-            {name:'互联网'},
+            // {name:'互联网'},
+            // {name:'金融'},
+            // {name:'土木工程'},
+            // {name:'化学与环境测试'},
+            // {name:'生物结构与社会人文'},
+            // {name:'天地人和草木共生万物和谐'},
+            // {name:'互联网'},
+            // {name:'互联网'},
+            // {name:'互联网'},
+            // {name:'互联网'},
         ],
         // 存标签下标的数组
-        optionShow:[],
+        // optionShow:[],
+        // 存标签下标
+        optionShow:'',
         // 是否显示labelBox
         labelBoxIsNull:true,
         itemTitle:'行业',
+        // 线上宣讲会详情
+        onlineSession:'',
+        // 是否是往届
+        isHistory:'',
     },
 
     /**
@@ -54,6 +60,7 @@ Page({
         // 轮播图
         this.getBarImg();
         this.getOnlineSession();
+        this.getAllBusiness();
 
     },
 
@@ -120,9 +127,24 @@ Page({
     },
     // 线上宣讲详情
     getOnlineSession(){
+        const that = this as any;
         requestService.get('onlinePresentations/',{}).then(res=>{
-            console.log('宣讲会',res);
+            // 将后台时间格式化为01-15 04:15格式
+            for (let i = 0; i < res.data.data.length; i++) {
+                res.data.data[i].updateDate = this.timeHandle(res.data.data[i].updateDate);
+            }
+            that.setData({
+                onlineSession:res.data.data
+            });
         })
+    },
+    // 时间处理函数
+    timeHandle(dateTime:string){
+        let date = dateTime.split(' ')[0];
+        let time = dateTime.split(' ')[1];
+        let dateNew = date.split('-')[1] + '-' + date.split('-')[2];
+        let timeNew = time.split(':')[0] + ':' + time.split(':')[1];
+        return (dateNew + ' ' + timeNew);
     },
     indexChange(event:any){
         let that = this as any;
@@ -132,41 +154,138 @@ Page({
             indexImg: index
         })
     },
-    // 点击标签触发
+    // 搜索框
+    searchInput(e:any){
+        const that = this as any;
+        that.getAllBusiness(e.detail.value);
+    },
+    // 点击标签触发（单选）
     clickLabel(event:any){
-        let that = this as any;
+        const that = this as any;
         // 点击标签切换对应标签选中状态
         console.log(event.currentTarget.dataset.info);
         const info = event.currentTarget.dataset.info;
         let isSelect = that.data.option[info].isSelect;
-        var option = "optionShow["+info+"]";
+        var option = "option["+info+"].isSelect";
         if (!isSelect){
-            //isSelect为false 如果即将被点亮，则将其下标info加入optionShow数组的info位置 以便删除的时候好找到
+            //isSelect为false 如果即将被点亮，则将其下标info存入optionShow 以便点亮另一个的时候好找到它取消点亮
+            // 改变标签选中状态
+            var selected = "option["+that.data.optionShow+"].isSelect";
             that.setData({
-                [option]:info
+                [option]:!isSelect
+            });
+            // 取消上一个点亮的标签
+            if (that.data.optionShow!=='') {
+                that.setData({
+                    [selected]:!that.data.option[that.data.optionShow].isSelect
+                });
+            }
+            // 存入点亮标签的info
+            that.setData({
+                optionShow:info
             });
         } else {
-            // 为true，即将被取消，则要找到对应info位置将其置空
-            // 这里赋值null比赋值undefined和空要好
+            // 取消标签选中状态 置''给optionShow
             that.setData({
-                [option]:null
+                [option]:!isSelect,
+                optionShow:''
             });
         }
-        // 改变标签选中状态
-        var option = "option["+info+"].isSelect";
-        that.setData({
-            [option]:!isSelect
-        });
-        // 遍历option，如果标签都未被选中，则labelBox为空，赋给labelBoxIsNull ：true 在wxml上不予显示
+        // 如果optionShow为空，说明没有标签被选中 则labelBox为空，赋给labelBoxIsNull ：true 在wxml上不予显示
         let isNull = true;
-        that.data.option.forEach((item:any)=>{
-            if (item.isSelect) {
-                isNull = false;
-            }
-        })
+        if (that.data.optionShow === '') {
+            isNull = true;
+            that.getAllBusiness();
+        }else {
+            isNull = false;
+            console.log('name',that.data.option[that.data.optionShow].name);
+            that.getAllBusiness(that.data.option[that.data.optionShow].name);
+        }
         that.setData({
             labelBoxIsNull:isNull
         });
+        // 遍历option，如果标签都未被选中，则labelBox为空，赋给labelBoxIsNull ：true 在wxml上不予显示
+        // let isNull = true;
+        // that.data.option.forEach((item:any)=>{
+        //     if (item.isSelect) {
+        //         isNull = false;
+        //     }
+        // });
+        // that.setData({
+        //     labelBoxIsNull:isNull
+        // });
+    },
+    // 点击标签触发（可多选）
+    // clickLabel(event:any){
+    //     let that = this as any;
+    //     // 点击标签切换对应标签选中状态
+    //     console.log(event.currentTarget.dataset.info);
+    //     const info = event.currentTarget.dataset.info;
+    //     let isSelect = that.data.option[info].isSelect;
+    //     var option = "optionShow["+info+"]";
+    //     if (!isSelect){
+    //         //isSelect为false 如果即将被点亮，则将其下标info加入optionShow数组的info位置 以便删除的时候好找到
+    //         that.setData({
+    //             [option]:info
+    //         });
+    //     } else {
+    //         // 为true，即将被取消，则要找到对应info位置将其置空
+    //         // 这里赋值null比赋值undefined和空要好
+    //         that.setData({
+    //             [option]:null
+    //         });
+    //     }
+    //     // 改变标签选中状态
+    //     var option = "option["+info+"].isSelect";
+    //     that.setData({
+    //         [option]:!isSelect
+    //     });
+    //     // 遍历option，如果标签都未被选中，则labelBox为空，赋给labelBoxIsNull ：true 在wxml上不予显示
+    //     let isNull = true;
+    //     that.data.option.forEach((item:any)=>{
+    //         if (item.isSelect) {
+    //             isNull = false;
+    //         }
+    //     })
+    //     that.setData({
+    //         labelBoxIsNull:isNull
+    //     });
+    //
+    // },
+    // 查询所有行业或按行业查询宣讲会
+    getAllBusiness(business?:string){
+        const that = this as any;
+        if (business) {
+            // 按行业查询
+            requestService.get('onlinePresentations/business/',{business},{},true,true)
+                .then(res=>{
+                    that.setData({
+                        onlineSession:res.data.data
+                    });
+                })
+        }else {
+            requestService.get('onlinePresentations/business/',{})
+                .then(res=>{
+                    that.setData({
+                        option:res.data.data
+                    });
+
+                })
+        }
+
+    },
+    // 往届生筛选
+    isHistory(){
+        const that = this as any;
+        if (that.data.isHistory == ''){
+            that.setData({
+                isHistory:true
+            });
+        }else {
+            that.setData({
+                isHistory:!that.data.isHistory
+            });
+        }
 
     },
     // 获取剩下高度给scrollview用
@@ -190,9 +309,13 @@ Page({
             })
         })
     },
-    toCloud(){
+    toCloud(e:any){
+        const that = this as any;
+        let info = e.currentTarget.dataset.info;
+        let data = that.data.onlineSession[info];
+        const sendData = JSON.stringify(data);
         wx.navigateTo({
-            url:'../cloud/cloud'
+            url:'../cloud/cloud?data=' + sendData
         })
     }
 })

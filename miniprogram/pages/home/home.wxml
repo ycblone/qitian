@@ -27,7 +27,7 @@
                 <view class="topText">
                     <view class="leftText">线上宣讲查询</view>
                     <view class="weui-cell weui-cell_input">
-                        <input class="weui-input" bindinput="changeInput" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;"/>
+                        <input class="weui-input" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;" bindconfirm="searchInput"/>
                         <van-icon name="search" class="localIco" size="19px"/>
                     </view>
                 </view>
@@ -40,7 +40,7 @@
                         </van-dropdown-item>
                     </van-dropdown-menu>
                 </view>
-                <view class="clickText">往届生可投</view>
+                <view class="{{isHistory?'clickText':''}}" bindtap="isHistory">往届生可投</view>
                 <view class="myStore">我的收藏</view>
             </view>
         </view>
@@ -48,62 +48,16 @@
         <view class="scrollView">
             <scroll-view scroll-y="true" class="scrollContent" style="height:{{scrollHeight + 'px'}};">
                 <view class="labelBox" wx:if="{{!labelBoxIsNull}}">
-                    <van-tag round wx:for="{{optionShow}}" wx:key="index" color="white" text-color="black" size="medium" custom-class="showPullBtn" wx:if="{{item!=null}}">{{option[item].name}}</van-tag>
+                    <!--<van-tag round wx:for="{{optionShow}}" wx:key="index" color="white" text-color="black" size="medium" custom-class="showPullBtn" wx:if="{{item!=null}}">{{option[item].name}}</van-tag>-->
+                    <van-tag round color="white" text-color="black" size="medium" custom-class="showPullBtn">{{option[optionShow].name}}</van-tag>
                 </view>
                 <view class="scrollAddWrap">
-                    <view class="sessionBlock">
-                        <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                        <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                        <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                    </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view><view class="sessionBlock">
-                    <image src="../../img/swiperA.jpg" alt=""><text>12-31 10:30</text></image>
-                    <view class="sessionTitle">【凯德集团】空中宣讲会</view>
-                    <view class="sessionPlayNum">54524455播放·凯德集团</view>
-                </view>
+                    <view class="sessionBlock" wx:for="{{onlineSession}}" wx:key="index" bindtap="toCloud" data-info="{{index}}" wx:if="{{isHistory==''?true:item.isWangjiansheng}}">
+                        <image src="../../img/swiperA.jpg" alt=""><text>{{item.updateDate}}</text></image>
+                        <!--<image src="{{item.cover}}" alt=""><text>{{item.updateDate}}</text></image>-->
+                        <view class="sessionTitle">【{{item.companyName}}】{{item.title}}</view>
+                        <view class="sessionPlayNum">{{item.viewCounts}}播放·{{item.companyName}}</view>
+                    </view>
                 </view>
 
             </scroll-view>

@@ -1,5 +1,4 @@
 <!--miniprogram/pages/cloud/cloud.wxml-->
-<script type="text/javascript" src="http://at.alicdn.com/t/font_386052_rob0iyoleb0dlsor.js"></script>
 <view class="cloudWrap">
     <!-- banner图 -->
     <view class="banner">
@@ -7,10 +6,15 @@
         <video src="{{videoUrl}}" autoplay="{{true}}" loop="{{true}}"></video>
     </view>
     <view class="description">
-        <view class="desTitle">【凯德集团】空中宣讲会|北京厂赢在当下</view>
+        <view class="desTitle">【{{cloudData.companyName}}】{{cloudData.title}}</view>
         <view class="desBottom">
-            <view class="playNum"><van-icon name="play" color="#D0D0D0"/>52150</view>
-            <image src="../../img/turnSend.svg" alt="" style=""/>
+            <view class="playNum"><van-icon name="play" color="#D0D0D0"/>{{cloudData.viewCounts}}</view>
+            <view class="collectAndSend">
+                <van-icon name="{{isCollected?'star':'star-o'}}" size="21" color="{{isCollected?'#ce4920':''}}" style="margin-right: 16rpx" bindtap="clickCollect"/>
+                <!--<image src="../../img/turnSend.svg" alt="" style=""/>-->
+                <van-icon name="share" size="21"/>
+            </view>
+
         </view>
     </view>
     <view class="line"></view>
@@ -18,11 +22,19 @@
         <van-tabs active="a" color="#ce4920" animated sticky>
             <van-tab title="PPT" name="a">
                 <view class="ppt">
-                    内容 1
+                    <image src="{{cloudData.ppt}}" alt=""/>
                 </view>
             </van-tab>
-            <van-tab title="招聘简章" name="b">内容 2</van-tab>
-            <van-tab title="投递地址" name="c">内容 3</van-tab>
+            <van-tab title="招聘简章" name="b">
+                <view class="jobText">
+                    {{cloudData.exotericIntake}}
+                </view>
+            </van-tab>
+            <van-tab title="投递地址" name="c">
+                <view class="deliver">
+                    {{cloudData.deliveryAddress}}
+                </view>
+            </van-tab>
         </van-tabs>
     </view>
 </view>

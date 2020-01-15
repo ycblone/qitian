@@ -104,7 +104,7 @@
 }
 /*往届生可投*/
 .clickText{
-
+    color: #ce4920;
 }
 /*我的收藏*/
 .myStore{

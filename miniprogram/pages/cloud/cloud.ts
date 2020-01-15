@@ -6,14 +6,18 @@ Page({
    */
   data: {
       videoUrl: '',
-      hasVideo: false
+      hasVideo: false,
+      cloudData:'',
+      isCollected:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-
+  onLoad: function (option:any) {
+      this.setData({
+          cloudData:JSON.parse(option.data)
+      });
   },
 
   /**
@@ -63,5 +67,12 @@ Page({
    */
   onShareAppMessage: function ():any {
 
-  }
+  },
+    // 点击收藏
+    clickCollect(){
+    const that = this as any;
+    that.setData({
+        isCollected:!that.data.isCollected
+    });
+    },
 })
