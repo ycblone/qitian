@@ -4,15 +4,15 @@
         <image bindtap="pic_3_click" src="../../img/company1_pic_3.jpg" style="width:127rpx;height:100rpx;" mode="aspectFit" border="0" class="pic"></image>
         <view class="bottom">
             <image bindtap="icon_11_click" src="http://wx.ymznkf.com/project/8791/测试//company1/images/company1_icon_11.jpg" style=" width:30rpx;height:36rpx;"  mode="scaleToFill" border="0"    class="icon"></image>
-            <text decode="{{true}}" class="iconText">圣诞快乐房价阿斯达克顺利打开思路三楼的看法</text>
+            <text decode="{{true}}" class="iconText">{{companyMoreData.address}}</text>
         </view>
         <view class="border">
         </view>
         <view class="imgRight">
-            <text decode="{{true}}" class="title">天虹基金管理有限公司北京分公司</text>
+            <text decode="{{true}}" class="title">{{companyMoreData.name}}</text>
             <view class="miaoshu">
-                <text decode="{{true}}" class="hangye">所属行业：金融</text>
-                <text decode="{{true}}" class="guimo">规模：150-500人</text>
+                <text decode="{{true}}" class="hangye">所属行业：{{companyMoreData.business}}</text>
+                <text decode="{{true}}" class="guimo">规模：{{companyMoreData.scale}}</text>
             </view>
         </view>
     </view>

@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      meetingData:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-
+  onLoad: function (option:any) {
+      this.setData({
+          meetingData:JSON.parse(option.data)
+      });
   },
 
   /**
@@ -65,8 +67,9 @@ Page({
   },
     // 进入会场
     comeIn(){
+    const that = this as any;
         wx.navigateTo({
-            url:'meetingPlace'
+            url:'meetingPlace?id='+that.data.meetingData.id
         })
     }
 })

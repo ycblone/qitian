@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    companyMoreData:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-
+  onLoad: function (option:any) {
+      const that = this as any;
+      that.setData({
+          companyMoreData:JSON.parse(option.data)
+      });
   },
 
   /**

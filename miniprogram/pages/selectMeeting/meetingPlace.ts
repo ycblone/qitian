@@ -1,18 +1,25 @@
 // miniprogram/pages/selectMeeting/meetingPlace.js
+import {requestService} from "../../services/request-service";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      id:'',
+      companyData:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-
+  onLoad: function (option:any) {
+      const that = this as any;
+      that.setData({
+          id:option.id
+      });
+      that.getCompany();
   },
 
   /**
@@ -63,10 +70,24 @@ Page({
   onShareAppMessage: function ():any {
 
   },
+    // 获取当前会场的公司
+    getCompany(){
+        const that = this as any;
+        const business = that.data.id;
+        requestService.get('dualSelect/companies/',{business},{},true,true)
+            .then(res=>{
+              that.setData({
+                  companyData:res.data.data
+              });
+            })
+    },
     // 进入公司详情
-    toCompany(){
-     wx.navigateTo({
-         url:'companyMore'
+    toCompany(event:any){
+        const that = this as any;
+        let info = event.currentTarget.dataset.info;
+        const sendData = JSON.stringify(that.data.companyData[info]);
+        wx.navigateTo({
+         url:'companyMore?data='+sendData
      })
     }
 })

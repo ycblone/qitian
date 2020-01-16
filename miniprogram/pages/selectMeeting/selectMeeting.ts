@@ -1,18 +1,21 @@
 // miniprogram/pages/selectMeeting/selectMeeting.js
+import {requestService} from "../../services/request-service";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+        selectTypeSession:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+      const that = this as any;
+      that.getAllSelectType();
   },
 
   /**
@@ -68,14 +71,26 @@ Page({
   onShareAppMessage: function ():any {
 
   },
-    toTitleMeeting(){
-        wx.navigateTo({
-            url:'meeting?title=0'
-        })
+    // 获取全部双选会的类型、 id……
+    getAllSelectType(){
+        const that = this as any;
+        requestService.get('dualSelectType/',{})
+          .then(res=>{
+              that.setData({
+                  selectTypeSession:res.data.data
+              })
+          })
     },
-    toAreaMeeting(){
-        wx.navigateTo({
-            url:'meeting?title=1'
-        })
-    }
+    toSelectMore(event:any){
+      const id = event.currentTarget.dataset.info;
+        if (id > 1) {
+            wx.navigateTo({
+                url:'meeting?id='+id
+            })
+        }else {
+            wx.navigateTo({
+                url:'meeting?id='+id
+            })
+        }
+    },
 })

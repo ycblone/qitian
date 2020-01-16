@@ -159,10 +159,12 @@ Page({
     searchInput(e:any){
         const that = this as any;
         that.getAllBusiness(e.detail.value);
-        const value = e.detail.value
-        requestService.get('onlinePresentations/keyword/',{value},{},true,true)
+        const business = e.detail.value;
+        requestService.get('onlinePresentations/keyword/',{business},{},true,true)
             .then(res=>{
-
+                that.setData({
+                    onlineSession:res.data.data
+                });
             })
     },
     // 失焦时

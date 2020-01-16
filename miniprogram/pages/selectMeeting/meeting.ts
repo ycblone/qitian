@@ -1,4 +1,6 @@
 // miniprogram/pages/selectMeeting/meeting.js
+import {requestService} from "../../services/request-service";
+
 Page({
 
   /**
@@ -8,7 +10,9 @@ Page({
       scrollHeight:'',
       isArea:false,
       region: ['广东省', '广州市', '海珠区'],
-      customItem: '全部'
+      customItem: '全部',
+      id:'',
+      titleMeeting:''
   },
 
   /**
@@ -16,10 +20,14 @@ Page({
    */
   onLoad: function (option:any) {
       const that = this as any;
-      if (option.title == '0') {
+      that.setData({
+          id:option.id
+      });
+      if (option.id == 1) {
           that.setData({
               isArea:false
           });
+          that.getTitleMeeting();
           wx.setNavigationBarTitle({
               title: '专题双选会'
           });
@@ -27,6 +35,7 @@ Page({
           that.setData({
               isArea:true
           });
+          that.getTitleMeeting();
           wx.setNavigationBarTitle({
               title: '区域招聘会'
           });
@@ -84,6 +93,19 @@ Page({
   onShareAppMessage: function ():any {
 
   },
+    // 根据id获取专题双选会或区域双选会
+    getTitleMeeting(){
+        const that = this as any;
+        const business = that.data.id;
+      requestService.get("dualSelectType/dualSelects/",{business},{},true,true)
+          .then(res=>{
+              console.log(res);
+              that.setData({
+                  titleMeeting:res.data.data
+              });
+
+          })
+    },
     // 获取剩余高度
     computeScrollViewHeight() {
         const that = this as any;
@@ -107,9 +129,11 @@ Page({
         console.log('event',event);
     },
     // 进入招聘会
-    toMore(){
+    toMore(event:any){
+      let info = event.currentTarget.dataset.info;
+      const sendData = JSON.stringify(this.data.titleMeeting[info]);
       wx.navigateTo({
-          url:'meetingMore'
+          url:'meetingMore?data='+sendData
       })
     }
 })

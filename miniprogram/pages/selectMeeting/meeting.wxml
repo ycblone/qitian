@@ -32,79 +32,19 @@
     <view class="scrollView">
         <scroll-view class="scrollContent" scroll-y="true" style="height:{{scrollHeight + 'px'}};">
             <view style="padding-bottom: 50rpx">
-                <view class="companyBlock" bindtap="toMore">
+                <view class="companyBlock" bindtap="toMore" data-info="{{index}}" wx:for="{{titleMeeting}}" wx:key="index">
                     <view class="imgLeft">
-                        <image src="../../img/swiperA.jpg" alt=""/>
+                        <image src="{{item.icon}}" alt=""/>
                     </view>
                     <view class="sessionRight">
-                        <view class="rightTitle">冬季offer节--寒假实习专场</view>
+                        <view class="rightTitle">{{item.title}}</view>
                         <view class="rightText">
-                            <text>工作地点：北京</text>
-                            <text>初面地点：线上</text>
+                            <text>工作地点：{{item.address}}</text>
+                            <text style="text-indent: 6px;">初面地点：{{item.interviewLocation}}</text>
                         </view>
-                        <view class="rightBottom">截止时间：2019-11-01</view>
+                        <view class="rightBottom">截止时间：{{item.expirationDate}}</view>
                     </view>
-                </view><view class="companyBlock">
-                <view class="imgLeft">
-                    <image src="../../img/swiperA.jpg" alt=""/>
                 </view>
-                <view class="sessionRight">
-                    <view class="rightTitle">冬季offer节--寒假实习专场</view>
-                    <view class="rightText">
-                        <text>工作地点：北京</text>
-                        <text>初面地点：线上</text>
-                    </view>
-                    <view class="rightBottom">截止时间：2019-11-01</view>
-                </view>
-            </view><view class="companyBlock">
-                <view class="imgLeft">
-                    <image src="../../img/swiperA.jpg" alt=""/>
-                </view>
-                <view class="sessionRight">
-                    <view class="rightTitle">冬季offer节--寒假实习专场</view>
-                    <view class="rightText">
-                        <text>工作地点：北京</text>
-                        <text>初面地点：线上</text>
-                    </view>
-                    <view class="rightBottom">截止时间：2019-11-01</view>
-                </view>
-            </view><view class="companyBlock">
-                <view class="imgLeft">
-                    <image src="../../img/swiperA.jpg" alt=""/>
-                </view>
-                <view class="sessionRight">
-                    <view class="rightTitle">冬季offer节--寒假实习专场</view>
-                    <view class="rightText">
-                        <text>工作地点：北京</text>
-                        <text>初面地点：线上</text>
-                    </view>
-                    <view class="rightBottom">截止时间：2019-11-01</view>
-                </view>
-            </view><view class="companyBlock">
-                <view class="imgLeft">
-                    <image src="../../img/swiperA.jpg" alt=""/>
-                </view>
-                <view class="sessionRight">
-                    <view class="rightTitle">冬季offer节--寒假实习专场</view>
-                    <view class="rightText">
-                        <text>工作地点：北京</text>
-                        <text>初面地点：线上</text>
-                    </view>
-                    <view class="rightBottom">截止时间：2019-11-01</view>
-                </view>
-            </view><view class="companyBlock">
-                <view class="imgLeft">
-                    <image src="../../img/swiperA.jpg" alt=""/>
-                </view>
-                <view class="sessionRight">
-                    <view class="rightTitle">冬季offer节--寒假实习专场</view>
-                    <view class="rightText">
-                        <text>工作地点：北京</text>
-                        <text>初面地点：线上</text>
-                    </view>
-                    <view class="rightBottom">截止时间：2019-11-01</view>
-                </view>
-            </view>
             </view>
 
         </scroll-view>
