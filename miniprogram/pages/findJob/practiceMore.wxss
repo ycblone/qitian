@@ -46,3 +46,32 @@
 van-icon{
     color: #ce4920;
 }
+.line{
+    width: 100%;
+    height: 20rpx;
+    background-color: #ecf3fa;
+}
+.contentTitle{
+    height: 40rpx;
+    display: flex;
+    margin: 20rpx;
+}
+.borderLeft{
+    font-size: 0;
+    border: solid #ce4920;
+    border-width: .5rem 2px;
+    color: #ce4920;
+    border-radius: 10rpx;
+    height: 1px;
+    margin: auto 0;
+
+}
+.borderRight{
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10rpx;
+}
+.jobText{
+    color: grey;
+    padding: 20rpx;
+}

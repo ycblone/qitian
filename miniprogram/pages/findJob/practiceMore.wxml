@@ -5,32 +5,41 @@
             <image src="../../img/swiperA.jpg" alt=""/>
         </view>
         <view class="cardRight">
-            <view class="cardTitle">企业银行部实习生</view>
-            <text class="overOmit">浦发银行硅谷创业街</text>
+            <view class="cardTitle">{{practiceSession.title}}</view>
+            <text class="overOmit">{{practiceSession.companyName}}</text>
         </view>
     </view>
     <view style="display: flex;height: 110rpx;padding: 20rpx 20rpx;color: #808080">
         <view class="demandLeft">
             <view>
-                <van-icon name="location-o" />北京
-            </view>
-            <view>
-                <van-icon name="clock-o" />3天/周
-            </view>
-        </view>
-        <view class="demandRight">
-            <view>
-                <van-icon name="balance-o" />面议
+                <van-icon name="location-o" />{{practiceSession.address}}
             </view>
             <view style="display: flex;">
                 <view style="width: 40rpx;height: 40rpx;">
                     <image src="../../img/hat.png" alt="" style="width: 100%;height: 100%;"/>
                 </view>
-                大专以上
+                {{practiceSession.education}}
             </view>
+            <!--<view>-->
+                <!--<van-icon name="clock-o" />3天/周-->
+            <!--</view>-->
+        </view>
+        <view class="demandRight">
+            <view>
+                <van-icon name="balance-o" />{{practiceSession.pay?practiceSession.pay:'面议'}}
+            </view>
+
 
 
         </view>
 
+    </view>
+    <view class="line"></view>
+    <view class="contentTitle">
+        <view class="borderLeft">*</view>
+        <view class="borderRight">岗位介绍</view>
+    </view>
+    <view class="jobText">
+        {{practiceSession.positionsInformation}}
     </view>
 </view>

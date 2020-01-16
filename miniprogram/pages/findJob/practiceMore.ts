@@ -1,14 +1,11 @@
-// miniprogram/pages/cloud/cloud.js
+// miniprogram/pages/findJob/practiceMore.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      videoUrl: '',
-      hasVideo: false,
-      cloudData:'',
-      isCollected:false
+      practiceSession:'',
   },
 
   /**
@@ -16,7 +13,7 @@ Page({
    */
   onLoad: function (option:any) {
       this.setData({
-          cloudData:JSON.parse(option.data)
+          practiceSession:JSON.parse(option.data)
       });
   },
 
@@ -65,21 +62,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
-      if (res.from === 'button') {
-          // 来自页面内转发按钮
-          console.log(res.target)
-      }
-      return {
-          title: '自定义转发标题',
-          path: '/pages/cloud?'
-      }
-  },
-    // 点击收藏
-    clickCollect(){
-    const that = this as any;
-    that.setData({
-        isCollected:!that.data.isCollected
-    });
-    },
+  onShareAppMessage: function () {
+
+  }
 })

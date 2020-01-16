@@ -12,7 +12,7 @@
             <view class="collectAndSend">
                 <van-icon name="{{isCollected?'star':'star-o'}}" size="21" color="{{isCollected?'#ce4920':''}}" style="margin-right: 16rpx" bindtap="clickCollect"/>
                 <!--<image src="../../img/turnSend.svg" alt="" style=""/>-->
-                <van-icon name="share" size="21"/>
+                <button open-type="share" class="iconBtn" size="mini"><van-icon name="share" size="21" style="margin-top: 14px;"/></button>
             </view>
 
         </view>

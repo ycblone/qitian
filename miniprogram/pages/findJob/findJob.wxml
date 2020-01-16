@@ -22,23 +22,24 @@
     <view class="scrollView">
         <scroll-view scroll-y="true" class="scrollContent" style="height:{{scrollHeight + 'px'}};">
             <view class="scrollAddWrap">
-                <view class="card" bindtap="toPractice">
+                <view class="card" bindtap="toPractice" wx:for="{{jobSession}}" wx:key="index" data-info="{{index}}">
                     <view class="imgWrap">
                         <image src="../../img/swiperA.jpg" alt=""/>
+                        <!--<image src="{{item.icon}}" alt=""/>-->
                     </view>
                     <view class="cardRight">
-                        <view class="cardTitle">企业银行部实习生</view>
-                        <text class="overOmit">浦发银行硅谷创业街</text>
-                        <text>截止日期：2019-10-06</text>
+                        <view class="cardTitle">{{item.title}}</view>
+                        <text class="overOmit">{{item.companyName}}</text>
+                        <text>截止日期：{{item.expirationDate}}</text>
                         <view class="cardBottom">
                             <view>
-                                <van-icon name="location-o" />北京
+                                <van-icon name="location-o" />{{item.address}}
                             </view>
+                            <!--<view>-->
+                                <!--<van-icon name="clock-o" />3天/周-->
+                            <!--</view>-->
                             <view>
-                                <van-icon name="clock-o" />3天/周
-                            </view>
-                            <view>
-                                <van-icon name="balance-o" />面议
+                                <van-icon name="balance-o" />{{item.pay?item.pay:'面议'}}
                             </view>
                         </view>
                     </view>

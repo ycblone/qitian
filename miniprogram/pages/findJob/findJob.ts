@@ -1,4 +1,6 @@
 // miniprogram/pages/findJob/findJob.js
+import {requestService} from "../../services/request-service";
+
 Page({
 
   /**
@@ -6,6 +8,7 @@ Page({
    */
   data: {
       scrollHeight:'',
+      jobSession:''
 
   },
 
@@ -13,7 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+      const that = this as any;
+      that.getJobSession();
   },
 
   /**
@@ -70,6 +74,16 @@ Page({
   onShareAppMessage: function ():any {
 
   },
+    // 获取实习工作信息
+    getJobSession(){
+        const that = this as any;
+        requestService.get('internship/',{})
+          .then(res=>{
+              that.setData({
+                  jobSession:res.data.data
+              });
+          })
+    },
     // 获取剩下高度给scrollview用
     computeScrollViewHeight() {
         const that = this as any;
@@ -92,9 +106,11 @@ Page({
         })
     },
 
-    toPractice(){
-      wx.navigateTo({
-          url:'practiceMore'
+    toPractice(event:any){
+        let info = event.currentTarget.dataset.info;
+        const sendData = JSON.stringify(this.data.jobSession[info]);
+        wx.navigateTo({
+          url:'practiceMore?data='+sendData
       })
     }
 })

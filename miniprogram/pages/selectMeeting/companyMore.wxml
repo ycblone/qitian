@@ -24,11 +24,11 @@
         </view>
         <text decode="{{true}}" class="barRight">公司简介</text>
     </view>
-    <view class="listBlock" bindtap="toJobMore">
-        <text decode="{{true}}" class="listTitle">金融机构部实习生</text>
+    <view class="listBlock" bindtap="toJobMore" wx:for="{{companyMoreData.posts}}">
+        <text decode="{{true}}" class="listTitle">{{item.name}}</text>
         <view class="listBottom">
-            <text decode="{{true}}" class="bottomLeft">本科及以上</text>
-            <text decode="{{true}}" class="bottomRight">发布时间：2019-11-12</text>
+            <text decode="{{true}}" class="bottomLeft">{{item.education}}</text>
+            <text decode="{{true}}" class="bottomRight">发布时间：{{item.pubdate}}</text>
         </view>
     </view>
 </view>

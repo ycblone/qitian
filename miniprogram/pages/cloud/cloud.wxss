@@ -44,6 +44,10 @@
 .collectAndSend{
     display: flex;
 }
+.iconBtn{
+    background-color: white;
+
+}
 /*.desBottom image{*/
     /*width: 20px;*/
     /*height: 20px;*/
