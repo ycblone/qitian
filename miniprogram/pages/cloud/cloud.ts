@@ -1,4 +1,7 @@
 // miniprogram/pages/cloud/cloud.js
+import {requestService} from "../../services/request-service";
+import {authenService} from "../../services/authen-service";
+var app:any = getApp<any>();
 Page({
 
   /**
@@ -81,5 +84,11 @@ Page({
     that.setData({
         isCollected:!that.data.isCollected
     });
+    requestService.post('collect/onlinePresentations',{
+        opid:that.data.cloudData.id,
+        uid:authenService.getUserId(),
+    }).then(res=>{
+        console.log('收藏',res);
+    })
     },
 })

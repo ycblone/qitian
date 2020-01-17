@@ -24,7 +24,7 @@
         </view>
         <text decode="{{true}}" class="barRight">公司简介</text>
     </view>
-    <view class="listBlock" bindtap="toJobMore" wx:for="{{companyMoreData.posts}}">
+    <view class="listBlock" bindtap="toJobMore" data-info="{{index}}" wx:for="{{companyMoreData.posts}}">
         <text decode="{{true}}" class="listTitle">{{item.name}}</text>
         <view class="listBottom">
             <text decode="{{true}}" class="bottomLeft">{{item.education}}</text>

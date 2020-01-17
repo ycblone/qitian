@@ -1,11 +1,15 @@
 // miniprogram/pages/my/my.js
+import {requestService} from "../../services/request-service";
+import {authenService} from "../../services/authen-service";
+var app:any = getApp<any>();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      userInfo: {},
+      hasUserInfo: false,
   },
 
   /**
@@ -67,5 +71,56 @@ Page({
    */
   onShareAppMessage: function ():any {
 
-  }
+  },
+    login(){
+    const that = this as any;
+        wx.login({
+            success (res:any) {
+                console.log("code",res.code);
+                app.globalData.code=res.code;
+                console.log("codeGLO",app.globalData.code);
+                if (res.code) {
+                    //发起网络请求
+                    const business = app.globalData.code;
+                    requestService.get('wx/code2Session/', {business},{},true,true)
+                        .then((e:any)=>{
+                        console.log("登录成功",e);
+                        console.log("token",e.data.data.token);
+                        // 引用自定义的authenService服务保存token 和 userId
+                        authenService.saveToken(e.data.data.token);
+                        authenService.saveUserId(e.data.data.user.id);
+
+                    });
+
+                } else {
+                    console.log('登录失败！' + res.errMsg)
+                }
+            }
+        })
+    },
+    // 获取用户信息
+    getUserInfo(e: any) {
+        console.log(e);
+        app.globalData.userInfo = e.detail.userInfo;
+        if (e.detail.userInfo) {
+            this.setData({
+                userInfo: e.detail.userInfo,
+                hasUserInfo: true,
+            })
+            this.recordUserInfo();
+        }
+
+    },
+    // 获取到用户信息后，拿其中的信息返回给后台，记录用户信息
+    recordUserInfo(){
+      requestService.post('user/',{
+          id:authenService.getUserId(),
+          nickName:app.globalData.userInfo.nickName,
+          openid:'',
+          session_key:'',
+          unionid:''
+      }).then(res=>{
+          console.log("后台注册",res);
+      })
+    },
 })

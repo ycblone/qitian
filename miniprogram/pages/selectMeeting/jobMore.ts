@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+      jobMoreData:'',
+      jobMoreTotal:'',
+      isCollected:false,
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-
+  onLoad: function (option:any) {
+      this.setData({
+          jobMoreData:JSON.parse(option.data),
+          jobMoreTotal:JSON.parse(option.totalData)
+      });
   },
 
   /**
@@ -62,5 +68,12 @@ Page({
    */
   onShareAppMessage: function ():any {
 
-  }
+  },
+    // 点击收藏
+    clickCollect(){
+        const that = this as any;
+        that.setData({
+            isCollected:!that.data.isCollected
+        });
+    },
 })

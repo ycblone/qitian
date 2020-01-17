@@ -9,7 +9,7 @@ page{
 }
 .jobMore_1 .topCard .cardTop{width:700rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
 .jobMore_1 .topCard .cardTop .cardTitle{width:700rpx;padding:0rpx;clear:both;margin-top:38rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:63rpx; line-height:66rpx;}
-.jobMore_1 .topCard .cardTop .cardTitle .titleTextL{width:355rpx;min-height:66rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-align:center; border-radius:0rpx; color:#000500;font-size:34rpx; line-height:66rpx;font-weight: bold}
+.jobMore_1 .topCard .cardTop .cardTitle .titleTextL{width:355rpx;min-height:66rpx;padding:0rpx;margin-top:0rpx;margin-left:0rpx;float:left;text-indent: 40rpx;border-radius:0rpx; color:#000500;font-size:34rpx; line-height:66rpx;font-weight: bold}
 .jobMore_1 .topCard .cardTop .cardTitle .titleTextR{width:222rpx;height:66rpx;padding:0rpx;margin-top:0rpx;margin-left:121rpx;float:left;text-align:center; border-radius:0rpx; color:#c3c3c3;font-size:13px; line-height:66rpx;}
 .jobMore_1 .topCard .cardTop .topContent{width:700rpx;padding:0rpx;clear:both;margin-top:0rpx;margin-left:0rpx;float:left;text-align:left; border-radius:0rpx;font-size:17rpx;}
 .jobMore_1 .topCard .cardTop .topContent .contentTop{width:700rpx;min-height:51rpx;padding:0rpx;clear:both;margin-top:14rpx;margin-left:40rpx;float:left;text-align:left; border-radius:0rpx; color:#a5a5a5;font-size:25rpx; font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu,宋体,Arial, Helvetica; line-height:51rpx;}
@@ -82,12 +82,12 @@ page{
 
 }
 .share image{
-    width: 26%;
+    width: 19px;
     height: 43%;
     margin: 0 auto;
 }
 .shareText{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 .deliver{
     flex-basis: 60%;

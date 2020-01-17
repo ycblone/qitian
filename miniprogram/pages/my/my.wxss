@@ -25,6 +25,9 @@ page{
     border-bottom: 1px solid white;
 
 }
+.loginBtn{
+    margin: 0;
+}
 .resume{
     height: 280rpx;
     display: flex;

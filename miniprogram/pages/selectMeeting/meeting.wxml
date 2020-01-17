@@ -2,16 +2,16 @@
 <view class="selectMeetingWrap">
     <view class="timeBox isTime" wx:if="{{!isArea}}">
         <view class="start">
-            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-                <view class="picker">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" disabled>
+                <view class="{{startTime?'picker':''}}" bindtap="clickAsc" data-info="{{0}}">
                     开始时间
                     <van-icon name="arrow-down" size="13px"/>
                 </view>
             </picker>
         </view>
         <view class="end">
-            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-                <view class="picker">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" disabled>
+                <view class="{{endTime?'picker':''}}" bindtap="clickAsc" data-info="{{1}}">
                     结束时间
                     <van-icon name="arrow-down" />
                 </view>
@@ -20,14 +20,20 @@
     </view>
     <view class="timeBox" wx:if="{{isArea}}">
         <view class="areaSelect">
-            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-                <view class="picker">
+            <!--<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">-->
+                <!--<view class="picker">-->
+                    <!--区域-->
+                    <!--<van-icon name="arrow-down" size="13px"/>-->
+                <!--</view>-->
+            <!--</picker>-->
+            <picker mode="selector" bindchange="bindRegionChange" value="{{regionIndex}}" range="{{region}}" bindtap="getRegion">
+                <view class="">
                     区域
                     <van-icon name="arrow-down" size="13px"/>
                 </view>
             </picker>
         </view>
-        <view class="areaText">北京</view>
+        <view class="areaText" wx:if="{{regionIndex}}">{{region[regionIndex]}}</view>
     </view>
     <view class="scrollView">
         <scroll-view class="scrollContent" scroll-y="true" style="height:{{scrollHeight + 'px'}};">

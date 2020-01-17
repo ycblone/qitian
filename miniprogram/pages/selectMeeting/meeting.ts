@@ -9,10 +9,14 @@ Page({
   data: {
       scrollHeight:'',
       isArea:false,
-      region: ['广东省', '广州市', '海珠区'],
-      customItem: '全部',
+      // region: ['广东省', '广州市', '海珠区'],
+      // customItem: '全部',
+      region:[],
+      regionIndex:'',
       id:'',
-      titleMeeting:''
+      titleMeeting:'',
+      startTime:false,
+      endTime:false,
   },
 
   /**
@@ -40,7 +44,7 @@ Page({
               title: '区域招聘会'
           });
       }
-
+        that.getRegion();
 
   },
 
@@ -126,7 +130,60 @@ Page({
     },
     // 地区选择器
     bindRegionChange(event:any){
-        console.log('event',event);
+        console.log('event',event.detail);
+        const that = this as any;
+        that.setData({
+            regionIndex:event.detail.value
+        });
+        const business = that.data.region[event.detail.value];
+        requestService.get('dualSelect/address/',{business},{},true,true)
+            .then(res=>{
+                that.setData({
+                    titleMeeting:res.data.data
+                });
+            })
+    },
+    // 获取区域信息
+    getRegion(){
+        const that = this as any;
+        requestService.get('dualSelect/address',{})
+          .then(res=>{
+              that.setData({
+                  region:res.data.data
+              });
+          })
+    },
+    // 点击按时间排序
+    clickAsc(event:any){
+      const that = this as any;
+        let info = event.currentTarget.dataset.info;
+        // 为0是开始时间排序 1：结束时间排序
+        if (info) {
+            that.setData({
+                startTime:false,
+                endTime:!that.data.endTime,
+            });
+            const business = that.data.id + '/time/expirationDate/asc';
+            requestService.get("dualSelect/dualSelectType/",{business},{},true,true)
+                .then(res=>{
+                    that.setData({
+                        titleMeeting:res.data.data
+                    });
+                })
+        }else {
+            // 开始时间排序
+            that.setData({
+                startTime:!that.data.startTime,
+                endTime:false,
+            });
+            const business = that.data.id + '/time/startDate/asc';
+            requestService.get("dualSelect/dualSelectType/",{business},{},true,true)
+                .then(res=>{
+                    that.setData({
+                        titleMeeting:res.data.data
+                    });
+                })
+        }
     },
     // 进入招聘会
     toMore(event:any){

@@ -2,25 +2,25 @@
     <view class="topCard">
         <view class="cardTop">
             <view class="cardTitle">
-                <text decode="{{true}}" class="titleTextL">金融机构部实习生</text>
-                <text decode="{{true}}" class="titleTextR">2020-02-15</text>
+                <text decode="{{true}}" class="titleTextL">{{jobMoreData.name}}</text>
+                <text decode="{{true}}" class="titleTextR">{{jobMoreData.pubdate}}</text>
             </view>
             <view class="topContent">
-                <text decode="{{true}}" class="contentTop">本科以上 实习</text>
-                <text decode="{{true}}" class="contentBottom">面议</text>
+                <text decode="{{true}}" class="contentTop">{{jobMoreData.education}}</text>
+                <text decode="{{true}}" class="contentBottom">{{jobMoreData.pay?jobMoreData.pay:'面议'}}</text>
             </view>
         </view>
         <!--<view class="greyLine"></view>-->
         <view class="cardBottom">
             <view class="bottomTop">
                 <image bindtap="bottomImg_15_click" src="http://wx.ymznkf.com/project/8791/测试/miniprogram/jobMore/images/jobMore_bottomImg_15.jpg" style=" width:110rpx;height:107rpx;"  mode="scaleToFill" border="0"    class="bottomImg"></image>
-                <text decode="{{true}}" class="bottomTopTitle">天虹基金</text>
-                <text decode="{{true}}" class="bottomTopContent">其他 规模：10-500人</text>
-                <button bindtap="bottomBtn_19_click" decode="{{true}}" class="bottomBtn">查看</button>
+                <text decode="{{true}}" class="bottomTopTitle">{{jobMoreTotal.name}}</text>
+                <text decode="{{true}}" class="bottomTopContent">规模：{{jobMoreTotal.scale}}</text>
+                <!--<button bindtap="bottomBtn_19_click" decode="{{true}}" class="bottomBtn">查看</button>-->
             </view>
             <view class="cardLocation">
-                <image bindtap="locationImg_20_click" src="http://wx.ymznkf.com/project/8791/测试/miniprogram/jobMore/images/jobMore_locationImg_20.jpg" style=" width:15rpx;height:24rpx;"  mode="scaleToFill" border="0"    class="locationImg"></image>
-                <text decode="{{true}}" class="locationContent">北京市城区乐坛北街2号乐坛大厦A21</text>
+                <image bindtap="locationImg_20_click" src="{{jobMoreTotal.icon}}" style=" width:15rpx;height:24rpx;"  mode="scaleToFill" border="0"    class="locationImg"></image>
+                <text decode="{{true}}" class="locationContent">{{jobMoreTotal.address}}</text>
             </view>
         </view>
     </view>
@@ -30,19 +30,23 @@
             </view>
             <text decode="{{true}}" class="borderRight">岗位描述</text>
         </view>
-        <view class="jobTask">岗位职责</view>
-        <view class="jobTaskContent">上的飞机数控开料机顺利打开考虑老师的卡顺利打开艾萨拉扣艾萨拉扣斯利康来上课流口水斯利康来上课斯利康啊顺利打开啊顺利打开来上课了收到了</view>
-        <view class="jobTask">岗位要求</view>
-        <view class="jobTaskContent">上的飞机数控开料机顺利打开考虑老师的卡顺利打开艾萨拉扣艾萨拉扣斯利康来上课流口水斯利康来上课斯利康啊顺利打开啊顺利打开来上课了收到了</view>
+        <!--<view class="jobTask">岗位职责</view>-->
+        <view class="jobTaskContent">{{jobMoreData.positionsInformation}}</view>
+        <!--<view class="jobTask">岗位要求</view>-->
+        <!--<view class="jobTaskContent">上的飞机数控开料机顺利打开考虑老师的卡顺利打开艾萨拉扣艾萨拉扣斯利康来上课流口水斯利康来上课斯利康啊顺利打开啊顺利打开来上课了收到了</view>-->
 
     </view>
     <view class="bottomButton">
         <view class="share">
-            <image src="../../img/share.png" alt=""/>
-            <view class="shareText">分享</view>
+            <button class="shareBtn" open-type="share" size="mini" style="height: 85rpx;background-color: white;">
+                <image src="../../img/share.png" alt=""/>
+                <view class="shareText" style="font-size: 12px;line-height: 7rpx;font-weight: 500;color: #8a8a8a;">分享</view>
+            </button>
+
         </view>
-        <view class="share">
-            <image src="../../img/collectd.png" alt=""/>
+        <view class="share" bindtap="clickCollect">
+            <!--<image src="../../img/collectd.png" alt=""/>-->
+            <van-icon name="{{isCollected?'star':'star-o'}}" size="21" color="{{isCollected?'#ce4920':''}}" style=""/>
             <view class="shareText">收藏</view>
         </view>
         <view class="deliver">

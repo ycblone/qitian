@@ -67,9 +67,13 @@ Page({
 
   },
     // 进入工作详情
-    toJobMore(){
-      wx.navigateTo({
-          url:'jobMore'
+    toJobMore(event:any){
+    const that =this as any;
+        let info = event.currentTarget.dataset.info;
+        const sendData = JSON.stringify(that.data.companyMoreData.posts[info]);
+        const sendTotalData = JSON.stringify(that.data.companyMoreData);
+        wx.navigateTo({
+          url:'jobMore?data='+sendData+'&&totalData='+sendTotalData
       })
     }
 

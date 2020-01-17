@@ -5,19 +5,19 @@
             <view class="topText">
                 <view class="leftText">最新实习查询</view>
                 <view class="weui-cell weui-cell_input">
-                    <input class="weui-input" bindinput="changeInput" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;"/>
+                    <input class="weui-input" bindinput="changeInput" placeholder="宣讲会、公司名称关键字" placeholder-style="font-size:13px;" bindconfirm="searchInput" bindblur="searchIsNull"/>
                     <van-icon name="search" class="localIco" size="19px"/>
                 </view>
             </view>
         </view>
-        <view class="headBottom">
-            <view class="industry">行业分类
-                <van-icon name="arrow-down" />
-            </view>
-            <view class="city">城市分类
-                <van-icon name="arrow-down" />
-            </view>
-        </view>
+        <!--<view class="headBottom">-->
+            <!--<view class="industry">行业分类-->
+                <!--<van-icon name="arrow-down" />-->
+            <!--</view>-->
+            <!--<view class="city">城市分类-->
+                <!--<van-icon name="arrow-down" />-->
+            <!--</view>-->
+        <!--</view>-->
     </view>
     <view class="scrollView">
         <scroll-view scroll-y="true" class="scrollContent" style="height:{{scrollHeight + 'px'}};">

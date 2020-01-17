@@ -30,6 +30,9 @@ page{
 .start{
     line-height: 100%;
 }
+.picker{
+    color: #ce4920;
+}
 .areaSelect{
     padding-left: 80rpx;
 }

@@ -2,8 +2,9 @@
 <view class="myWrap">
     <view class="myHead">
         <view class="imgAdd">
-            <image src="../../img/headPhoto.jpg" alt=""/>
-            <text class="login">注册/登录</text>
+            <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../img/headPhoto.jpg'}}" alt=""/>
+            <text class="login" wx:if="{{hasUserInfo}}">{{userInfo.nickName}}</text>
+            <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="login" class="loginBtn" size="mini" plain>注册/登录</button>
         </view>
     </view>
     <view class="resume">
