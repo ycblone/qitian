@@ -1,0 +1,14 @@
+<!--miniprogram/pages/my/myCollect.wxml-->
+<view class="myCollect">
+    <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+        <van-collapse-item title="我的公司" name="1" disabled="{{!myCompany.length}}">
+            <view class="item" wx:for="{{myCompany}}" wx:key="index" bindtap="toCompany">{{item.name}}</view>
+        </van-collapse-item>
+        <van-collapse-item title="我的实习" name="2" disabled="{{!tempJob.length}}">
+            <view class="item" wx:for="{{tempJob}}" wx:key="index" bindtap="toTempJob">{{item.title}}</view>
+        </van-collapse-item>
+        <van-collapse-item title="我的线上双选会" name="3" disabled="{{!onlineClass.length}}">
+            <view class="item" wx:for="{{onlineClass}}" wx:key="index" bindtap="toOnlineClass">{{item.title}}</view>
+        </van-collapse-item>
+    </van-collapse>
+</view>

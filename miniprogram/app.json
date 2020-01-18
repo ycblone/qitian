@@ -12,6 +12,7 @@
     "pages/findJob/practiceMore",
     "pages/findJob/findJob",
     "pages/cloud/cloud",
+    "pages/my/myCollect",
     "pages/selectMeeting/companyMore"
   ],
   "window": {

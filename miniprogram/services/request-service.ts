@@ -42,7 +42,8 @@ export const requestService = {
           wx.request({
               url: `${host}/${url}/${data.business.replace("\"","")}`,/*去引号*/
               method: 'GET',
-              header: { ...header, ...{ token: authenService.getToken() } },
+              // header: { ...header, ...{ token: authenService.getToken() } },
+              header: { ...header},
               success(res: any) {
                   if (showLoading) {
                       syncShowLoadingNum--;
@@ -79,7 +80,8 @@ export const requestService = {
           wx.request({
               url: `${host}/${url}`,
               method: 'GET',
-              header: { ...header, ...{ token: authenService.getToken() } },
+              // header: { ...header, ...{ token: authenService.getToken() } },
+              header: { ...header},
               data,
               success(res: any) {
                   if (showLoading) {
@@ -146,8 +148,9 @@ export const requestService = {
       wx.request({
         url: `${host}/${url}`,
         method: 'POST',
-        header: { ...header, ...{ token: authenService.getToken() } },
-        data,
+        // header: { ...header, ...{ token: authenService.getToken() } },
+          header: { ...header},
+          data,
         success(res: any) {
             if (showLoading) {
             syncShowLoadingNum--;

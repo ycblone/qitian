@@ -10,13 +10,20 @@ Page({
   data: {
       userInfo: {},
       hasUserInfo: false,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+      // 看缓存中是否还有用户信息
+      if (authenService.getUserInfo()) {
+          this.setData({
+              userInfo: authenService.getUserInfo(),
+              hasUserInfo: true,
+          })
+      }
   },
 
   /**
@@ -102,6 +109,7 @@ Page({
     getUserInfo(e: any) {
         console.log(e);
         app.globalData.userInfo = e.detail.userInfo;
+        authenService.saveUserInfo(e.detail.userInfo);
         if (e.detail.userInfo) {
             this.setData({
                 userInfo: e.detail.userInfo,
@@ -122,5 +130,11 @@ Page({
       }).then(res=>{
           console.log("后台注册",res);
       })
+    },
+    // 进入我的收藏详情页
+    toMyCollect(){
+        wx.navigateTo({
+            url:'myCollect'
+        })
     },
 })

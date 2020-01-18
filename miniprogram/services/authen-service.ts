@@ -5,12 +5,18 @@ export const authenService = {
     saveUserId(userId: string) {
         wx.setStorageSync('userId', userId);
     },
+    saveUserInfo(userInfo: object) {
+        wx.setStorageSync('userInfo', userInfo);
+    },
 
     getToken() {
         return wx.getStorageSync('token');
     },
     getUserId() {
         return wx.getStorageSync('userId');
+    },
+    getUserInfo() {
+        return wx.getStorageSync('userInfo');
     },
 
     clearToken() {

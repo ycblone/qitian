@@ -1,0 +1,8 @@
+/* miniprogram/pages/my/myCollect.wxss */
+.item{
+    border-bottom: 1px solid #ebedf0;
+    padding: 20rpx 0;
+}
+.item:last-child{
+    border: none;
+}
