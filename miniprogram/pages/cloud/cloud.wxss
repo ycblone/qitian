@@ -59,7 +59,8 @@
     background-color: #ecf3fa;
 }
 .ppt{
-
+    display: flex;
+    justify-content: center;
 }
 .jobText,.deliver{
     padding: 20rpx;

@@ -1,5 +1,6 @@
 // // miniprogram/pages/home/home.js
 import {requestService} from "../../services/request-service";
+import {authenService} from "../../services/authen-service";
 
 Page({
 
@@ -43,6 +44,7 @@ Page({
         onlineSession:'',
         // 是否是往届
         isHistory:'',
+        isMyCollected:'',
     },
 
     /**
@@ -292,6 +294,37 @@ Page({
             that.setData({
                 isHistory:!that.data.isHistory
             });
+        }
+
+    },
+    // 展示已收藏
+    isMyCollect(){
+        const that = this as any;
+        const business = authenService.getUserId();
+        if (that.data.isMyCollected){
+            // 点击取消查看我的收藏，查询所有
+            that.setData({
+                isMyCollected:!that.data.isMyCollected
+            });
+            // 所有
+            requestService.get('onlinePresentations/',{})
+                .then(res=>{
+                    that.setData({
+                        onlineSession:res.data.data
+                    });
+
+                })
+        }else {
+            // 点击查看我的收藏
+            that.setData({
+                isMyCollected:true
+            });
+            requestService.get("collect/onlinePresentations/user/",{business},{},true,true)
+                .then(res=>{
+                    that.setData({
+                        onlineSession:res.data.data
+                    });
+                })
         }
 
     },

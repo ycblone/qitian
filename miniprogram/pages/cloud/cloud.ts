@@ -1,7 +1,7 @@
 // miniprogram/pages/cloud/cloud.js
 import {requestService} from "../../services/request-service";
 import {authenService} from "../../services/authen-service";
-var app:any = getApp<any>();
+// var app:any = getApp<any>();
 Page({
 
   /**
@@ -21,6 +21,7 @@ Page({
       this.setData({
           cloudData:JSON.parse(option.data)
       });
+      this.isCollect();
   },
 
   /**
@@ -78,17 +79,77 @@ Page({
           path: '/pages/cloud?'
       }
   },
+    // 判断该宣讲会是否被用户收藏
+    isCollect(){
+        const that = this as any;
+        const business = authenService.getUserId();
+        // 获取该用户收藏的所有宣讲会
+        requestService.get('collect/onlinePresentations/user',{business},{},true,true)
+            .then(res => {
+                for (let item of res.data.data) {
+                    if (item.id == that.data.cloudData.id) {
+                        // 如果收藏包含该宣讲会，则设为已收藏
+                        that.setData({
+                            isCollected:true
+                        });
+                    }
+                }
+                // res.data.data.forEach((item:any)=>{
+                //     if (item.id == that.cloudData.id) {
+                //         // 如果收藏包含该宣讲会，则设为已收藏
+                //         that.setData({
+                //             isCollected:true
+                //         });
+                //     }
+                // });
+            })
+
+    },
     // 点击收藏
     clickCollect(){
     const that = this as any;
-    that.setData({
-        isCollected:!that.data.isCollected
-    });
-    requestService.post('collect/onlinePresentations',{
-        opid:that.data.cloudData.id,
-        uid:authenService.getUserId(),
-    }).then(res=>{
-        console.log('收藏',res);
-    })
+    if (authenService.getUserId()) {
+        // 判断状态是已收藏还是未收藏
+        if (that.data.isCollected) {
+            // 已收藏 则点击为取消收藏
+            requestService.post('collect/onlinePresentations',{
+                opid:that.data.cloudData.id,
+                uid:authenService.getUserId(),
+            }).then(res=>{
+                console.log('取消收藏',res);
+                that.setData({
+                    isCollected:false
+                });
+            })
+        }else {
+            // 未收藏 则点击收藏
+            requestService.post('collect/onlinePresentations',{
+                opid:that.data.cloudData.id,
+                uid:authenService.getUserId(),
+            }).then(res=>{
+                console.log('收藏',res);
+                that.setData({
+                    isCollected:true
+                });
+            })
+        }
+
+    }else {
+        wx.showModal({
+            title: '提示',
+            content: '请先登录',
+            success (res) {
+                if (res.confirm) {
+                    console.log('用户点击确定');
+                    wx.switchTab({
+                        url:'../my/my',
+                    });
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        })
+    }
+
     },
 })

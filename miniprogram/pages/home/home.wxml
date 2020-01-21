@@ -41,7 +41,7 @@
                     </van-dropdown-menu>
                 </view>
                 <view class="{{isHistory?'clickText':''}}" bindtap="isHistory">往届生可投</view>
-                <view class="myStore">我的收藏</view>
+                <view class="{{isMyCollected?'clickText':''}}" bindtap="isMyCollect">我的收藏</view>
             </view>
         </view>
         <!--<van-divider contentPosition="center" wx:if="{{labelBoxIsNull}}" fontSize="15">没有更多了</van-divider>-->
@@ -53,10 +53,10 @@
                 </view>
                 <view class="scrollAddWrap">
                     <view class="sessionBlock" wx:for="{{onlineSession}}" wx:key="index" bindtap="toCloud" data-info="{{index}}" wx:if="{{isHistory==''?true:item.isWangjiansheng}}">
-                        <image src="../../img/swiperA.jpg" alt=""><text>{{item.updateDate}}</text></image>
+                        <image src="{{item.cover?('http://'+item.cover):'../../img/placeholderImg.jpg'}}" alt=""><text>{{item.updateDate}}</text></image>
                         <!--<image src="{{item.cover}}" alt=""><text>{{item.updateDate}}</text></image>-->
                         <view class="sessionTitle">【{{item.companyName}}】{{item.title}}</view>
-                        <view class="sessionPlayNum">{{item.viewCounts}}播放·{{item.companyName}}</view>
+                        <view class="sessionPlayNum">{{item.viewCounts?item.viewCounts:'0'}}播放·{{item.companyName}}</view>
                     </view>
                 </view>
 

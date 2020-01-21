@@ -3,18 +3,17 @@
     <!-- banner图 -->
     <view class="banner">
         <!--<image wx:if="{{!hasVideo}}" src="{{videoUrl}}" alt=""/>-->
-        <video src="{{videoUrl}}" autoplay="{{true}}" loop="{{true}}"></video>
+        <video src="{{'http://'+cloudData.videoAddress}}" autoplay="{{true}}" loop="{{true}}"></video>
     </view>
     <view class="description">
         <view class="desTitle">【{{cloudData.companyName}}】{{cloudData.title}}</view>
         <view class="desBottom">
-            <view class="playNum"><van-icon name="play" color="#D0D0D0"/>{{cloudData.viewCounts}}</view>
+            <view class="playNum"><van-icon name="play" color="#D0D0D0"/>{{cloudData.viewCounts?cloudData.viewCounts:'0'}}</view>
             <view class="collectAndSend">
                 <van-icon name="{{isCollected?'star':'star-o'}}" size="21" color="{{isCollected?'#ce4920':''}}" style="margin-right: 16rpx" bindtap="clickCollect"/>
                 <!--<image src="../../img/turnSend.svg" alt="" style=""/>-->
                 <button open-type="share" class="iconBtn" size="mini"><van-icon name="share" size="21" style="margin-top: 14px;"/></button>
             </view>
-
         </view>
     </view>
     <view class="line"></view>
@@ -22,17 +21,17 @@
         <van-tabs active="a" color="#ce4920" animated sticky>
             <van-tab title="PPT" name="a">
                 <view class="ppt">
-                    <image src="{{cloudData.ppt}}" alt=""/>
+                    <image src="{{'http://'+cloudData.ppt}}" alt=""/>
                 </view>
             </van-tab>
             <van-tab title="招聘简章" name="b">
                 <view class="jobText">
-                    {{cloudData.exotericIntake}}
+                    {{cloudData.exotericIntake?cloudData.exotericIntake:''}}
                 </view>
             </van-tab>
             <van-tab title="投递地址" name="c">
                 <view class="deliver">
-                    {{cloudData.deliveryAddress}}
+                    {{cloudData.deliveryAddress?cloudData.deliveryAddress:''}}
                 </view>
             </van-tab>
         </van-tabs>
